@@ -21,20 +21,26 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+    analyse_audio = models.BooleanField(choices=[
+        [False, 'off'],
+        [True, 'on'],
+    ]
+)
 
 
 # PAGES
+
 class MyPage(Page):
-    pass
-
-
-class ResultsWaitPage(WaitPage):
-    pass
-
+    form_model = "player"
+    form_fields = ["analyse_audio"]
 
 class Results(Page):
-    pass
 
+    @staticmethod
+    def vars_for_template(player: Player):
+        result = player.analyse_audio
+        return {
+        "result": result
+        }
 
-page_sequence = [MyPage, ResultsWaitPage, Results]
+page_sequence = [MyPage, Results]
