@@ -3,8 +3,6 @@
 {{ endblock }}
 
 {{ block content }}
-    The Result is {{ result }}
-    and the number is {{ player.analyse_audio }}
 
 <head>
     <meta charset="UTF-8">
@@ -13,15 +11,15 @@
 </head>
 <body>
 
-    <h1>Video auswählen und abspielen</h1>
-
-    <!-- Dateiauswahl -->
-    <input type="file" id="videoInput" accept="video/*">
-    
     <!-- Videoplayer -->
     <video id="videoPlayer" width="640" height="360" controls>
         Ihr Browser unterstützt das Video-Tag nicht.
     </video>
+
+    <!-- Dateiauswahl -->
+    <input type="file" id="videoInput" accept="video/*">
+    
+
 
     <!-- JavaScript -->
     <script>
@@ -39,6 +37,8 @@
 
 </body>
 
+The Result is {{ result }}
+and the number is {{ player.analyse_audio }}
 
     {{ next_button }}
 {{ endblock }}
