@@ -3,3 +3,11 @@
 # otherwise, oTree will automatically overwrite it.
 otree>=5.0.0a21
 psycopg2>=2.8.4
+otree
+pyaudio
+numpy
+praat-parselmouth
+flask
+django
+moviepy
+scipy

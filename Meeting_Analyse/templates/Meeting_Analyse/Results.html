@@ -1,25 +1,21 @@
-{{ block title }}
+{% block title %}
     Page title
-{{ endblock }}
-
-{{ block content }}
-
+{% endblock %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video auswählen und abspielen</title>
 </head>
 <body>
-
-    <!-- Videoplayer -->
+    <!-- Video player -->
     <video id="videoPlayer" width="640" height="360" controls>
         Ihr Browser unterstützt das Video-Tag nicht.
     </video>
 
-    <!-- Dateiauswahl -->
+    <!-- File selection -->
     <input type="file" id="videoInput" accept="video/*">
-    
-
+    <div id="results"></div>
 
     <!-- JavaScript -->
     <script>
@@ -31,16 +27,33 @@
                 videoPlayer.src = fileURL;
                 videoPlayer.load();
                 videoPlayer.play();
+
+                // Send the file path to the backend
+                var formData = new FormData();
+                formData.append('videoFile', file);
+
+                fetch('/upload_video', {
+                    method: 'POST',
+                    body: formData
+                }).then(response => response.json())
+                .then(data => {
+                    console.log('Video file uploaded successfully', data);
+                }).catch(error => {
+                    console.error('Error uploading video file', error);
+                });
             }
         });
+
+        async function fetchResults() {
+            const response = await fetch('/fetch_audio_analysis');
+            const data = await response.json();
+            document.getElementById('results').innerText = JSON.stringify(data);
+        }
+
+        setInterval(fetchResults, 5000); // Fetch results every 5 seconds
     </script>
-
 </body>
-
 The Result is {{ result }}
 and the number is {{ player.analyse_audio }}
-
     {{ next_button }}
-{{ endblock }}
-
-
+{% endblock %}
