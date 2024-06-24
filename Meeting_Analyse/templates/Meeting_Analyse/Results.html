@@ -8,12 +8,10 @@
     <title>Video Ergebnisse</title>
 </head>
 <body>
-    <!-- Video player -->
     <video id="videoPlayer" width="640" height="360" controls>
         Ihr Browser unterstützt das Video-Tag nicht.
     </video>
 
-    <!-- File selection -->
     <input type="file" id="videoInput" accept="video/*">
     <div id="results">
         <div id="mean_pitch" class="result-box">Mean Pitch: <span id="mean_pitch_value"></span></div>
@@ -22,8 +20,22 @@
         <div id="zcr" class="result-box">Zero Crossing Rate: <span id="zcr_value"></span></div>
     </div>
 
-    <!-- JavaScript -->
     <script>
+        let analysisData = {};
+
+        async function fetchResults() {
+            try {
+                const response = await fetch('/static/global/audio_analysis.json'); // Ensure this path is correct
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                analysisData = await response.json();
+                console.log('Audio analysis data:', analysisData); // Log data to verify
+            } catch (error) {
+                console.error('Error fetching audio analysis:', error);
+            }
+        }
+
         document.getElementById('videoInput').addEventListener('change', function(event) {
             var file = event.target.files[0];
             if (file) {
@@ -33,7 +45,6 @@
                 videoPlayer.load();
                 videoPlayer.play();
 
-                // Send the file to the backend
                 var formData = new FormData();
                 formData.append('videoFile', file);
 
@@ -49,15 +60,24 @@
             }
         });
 
-        document.getElementById('videoPlayer').addEventListener('timeupdate', async function() {
-            var currentTime = Math.floor(this.currentTime);
-            const response = await fetch(`/fetch_audio_analysis?time=${currentTime}`);
-            const data = await response.json();
-            document.getElementById('mean_pitch_value').innerText = data.mean_pitch;
-            document.getElementById('std_pitch_value').innerText = data.std_pitch;
-            document.getElementById('hnr_value').innerText = data.hnr;
-            document.getElementById('zcr_value').innerText = data.zcr;
+        document.getElementById('videoPlayer').addEventListener('timeupdate', function() {
+            var videoPlayer = document.getElementById('videoPlayer');
+            var currentTime = Math.floor(videoPlayer.currentTime / 5) * 5; // Round to the nearest 5 seconds
+            if (analysisData[currentTime]) {
+                document.getElementById('mean_pitch_value').innerText = analysisData[currentTime].mean_pitch;
+                document.getElementById('std_pitch_value').innerText = analysisData[currentTime].std_pitch;
+                document.getElementById('hnr_value').innerText = analysisData[currentTime].hnr;
+                document.getElementById('zcr_value').innerText = analysisData[currentTime].zcr;
+            } else {
+                document.getElementById('mean_pitch_value').innerText = "N/A";
+                document.getElementById('std_pitch_value').innerText = "N/A";
+                document.getElementById('hnr_value').innerText = "N/A";
+                document.getElementById('zcr_value').innerText = "N/A";
+            }
         });
+
+        // Call fetchResults when the page loads
+        fetchResults();
     </script>
 </body>
 {% endblock %}
