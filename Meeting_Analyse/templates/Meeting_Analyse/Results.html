@@ -1,5 +1,5 @@
 {% block title %}
-    Results
+    Ergebnisse
 {% endblock %}
 {% block content %}
 <head>
@@ -25,14 +25,14 @@
 
         async function fetchResults() {
             try {
-                const response = await fetch('/static/global/audio_analysis.json'); // Ensure this path is correct
+                const response = await fetch('/static/global/audio_analysis.json'); // Pfad zur JSON-Datei sicherstellen
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 analysisData = await response.json();
-                console.log('Audio analysis data:', analysisData); // Log data to verify
+                console.log('Audioanalyse-Daten:', analysisData); // Daten zur Überprüfung ausgeben
             } catch (error) {
-                console.error('Error fetching audio analysis:', error);
+                console.error('Fehler beim Abrufen der Audioanalyse:', error);
             }
         }
 
@@ -44,25 +44,12 @@
                 videoPlayer.src = fileURL;
                 videoPlayer.load();
                 videoPlayer.play();
-
-                var formData = new FormData();
-                formData.append('videoFile', file);
-
-                fetch('/upload_video', {
-                    method: 'POST',
-                    body: formData
-                }).then(response => response.json())
-                .then(data => {
-                    console.log('Video file uploaded successfully', data);
-                }).catch(error => {
-                    console.error('Error uploading video file', error);
-                });
             }
         });
 
         document.getElementById('videoPlayer').addEventListener('timeupdate', function() {
             var videoPlayer = document.getElementById('videoPlayer');
-            var currentTime = Math.floor(videoPlayer.currentTime / 5) * 5; // Round to the nearest 5 seconds
+            var currentTime = Math.floor(videoPlayer.currentTime / 5) * 5; // Auf die nächsten 5 Sekunden runden
             if (analysisData[currentTime]) {
                 document.getElementById('mean_pitch_value').innerText = analysisData[currentTime].mean_pitch;
                 document.getElementById('std_pitch_value').innerText = analysisData[currentTime].std_pitch;
@@ -76,7 +63,7 @@
             }
         });
 
-        // Call fetchResults when the page loads
+        // Daten beim Laden der Seite abrufen
         fetchResults();
     </script>
 </body>
