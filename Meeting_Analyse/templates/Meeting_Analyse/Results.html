@@ -15,7 +15,12 @@
 
     <!-- File selection -->
     <input type="file" id="videoInput" accept="video/*">
-    <div id="results"></div>
+    <div id="results">
+        <div id="mean_pitch" class="result-box">Mean Pitch: <span id="mean_pitch_value"></span></div>
+        <div id="std_pitch" class="result-box">Standard Deviation of Pitch: <span id="std_pitch_value"></span></div>
+        <div id="hnr" class="result-box">Harmonicity (HNR): <span id="hnr_value"></span></div>
+        <div id="zcr" class="result-box">Zero Crossing Rate: <span id="zcr_value"></span></div>
+    </div>
 
     <!-- JavaScript -->
     <script>
@@ -47,13 +52,13 @@
         async function fetchResults() {
             const response = await fetch('/fetch_audio_analysis');
             const data = await response.json();
-            document.getElementById('results').innerText = JSON.stringify(data);
+            document.getElementById('mean_pitch_value').innerText = data.mean_pitch;
+            document.getElementById('std_pitch_value').innerText = data.std_pitch;
+            document.getElementById('hnr_value').innerText = data.hnr;
+            document.getElementById('zcr_value').innerText = data.zcr;
         }
 
         setInterval(fetchResults, 5000); // Fetch results every 5 seconds
     </script>
 </body>
-The Result is {{ result }}
-
-    {{ next_button }}
 {% endblock %}

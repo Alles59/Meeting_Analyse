@@ -27,11 +27,12 @@ class Player(BasePlayer):
         [False, 'off'],
         [True, 'on'],
     ])
+    video_path = models.StringField()
 
 def start_audio_analysis(video_path):
     abs_video_path = os.path.abspath(video_path)
     os.environ['VIDEO_PATH'] = abs_video_path
-    os.system(f'python Meeting_Analyse/Echtzeit.py')
+    os.system(f'python Meeting_Analyse/Echtzeit-Videoaudio.py')
 
 @csrf_exempt
 def upload_video(request):
@@ -55,7 +56,6 @@ def fetch_audio_analysis(request):
             "std_pitch": 0,
             "hnr": 0,
             "zcr": 0,
-            "mean_intensity_spl": 0,
         }
     return JsonResponse(data)
 
@@ -63,12 +63,12 @@ def fetch_audio_analysis(request):
 
 class MyPage(Page):
     form_model = "player"
-    form_fields = ["analyse_audio"]
+    form_fields = ["analyse_audio", "video_path"]
 
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
         if player.analyse_audio:
-            threading.Thread(target=start_audio_analysis, args=('video.mp4',)).start()
+            threading.Thread(target=start_audio_analysis, args=(player.video_path,)).start()
 
 class Results(Page):
     @staticmethod
@@ -82,7 +82,6 @@ class Results(Page):
                 "std_pitch": 0,
                 "hnr": 0,
                 "zcr": 0,
-                "mean_intensity_spl": 0,
             }
         return {
             "result": result,
