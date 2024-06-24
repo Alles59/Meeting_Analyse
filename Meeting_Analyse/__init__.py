@@ -1,11 +1,11 @@
 from otree.api import *
 import threading
-import json
 import os
+import json
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.core.files.storage import default_storage
-from django.core.files.base import ContentFile
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
 
 doc = """
 Your app description
@@ -29,63 +29,67 @@ class Player(BasePlayer):
     ])
     video_path = models.StringField()
 
-def start_audio_analysis(video_path):
+def extract_audio(video_path):
     abs_video_path = os.path.abspath(video_path)
-    os.environ['VIDEO_PATH'] = abs_video_path
-    os.system(f'python Meeting_Analyse/Echtzeit-Videoaudio.py')
+    os.system(f'python extract_audio.py "{abs_video_path}"')
+
+def analyze_audio(wav_path):
+    abs_wav_path = os.path.abspath(wav_path)
+    os.system(f'python Echtzeit-Videoaudio.py "{abs_wav_path}"')
 
 @csrf_exempt
 def upload_video(request):
     if request.method == 'POST':
         video_file = request.FILES['videoFile']
-        video_path = default_storage.save(video_file.name, ContentFile(video_file.read()))
+        fs = FileSystemStorage(location=os.path.join(settings.BASE_DIR, 'static', 'videos'))
+        video_path = fs.save(video_file.name, video_file)
+        video_url = fs.url(video_path)
         
-        # Start the audio analysis after the video is uploaded
-        threading.Thread(target=start_audio_analysis, args=(video_path,)).start()
+        # Start the audio extraction and analysis after the video is uploaded
+        threading.Thread(target=extract_audio, args=(os.path.join(settings.BASE_DIR, 'static', 'videos', video_path),)).start()
+        wav_path = os.path.splitext(video_path)[0] + ".wav"
+        threading.Thread(target=analyze_audio, args=(os.path.join(settings.BASE_DIR, 'static', 'videos', wav_path),)).start()
         
-        return JsonResponse({'video_path': video_path})
+        return JsonResponse({'video_path': video_url})
     return HttpResponse(status=400)
 
 def fetch_audio_analysis(request):
-    if os.path.exists('Meeting_Analyse/audio_analysis.json'):
-        with open('Meeting_Analyse/audio_analysis.json', 'r') as file:
+    current_time = int(request.GET.get('time', 0))
+    analysis_file_path = 'Meeting_Analyse/audio_analysis.json'
+    if os.path.exists(analysis_file_path):
+        with open(analysis_file_path, 'r') as file:
             data = json.load(file)
+            # Assuming data is structured to contain timestamps
+            result = data.get(str(current_time), {
+                "mean_pitch": 0,
+                "std_pitch": 0,
+                "hnr": 0,
+                "zcr": 0,
+            })
     else:
-        data = {
+        result = {
             "mean_pitch": 0,
             "std_pitch": 0,
             "hnr": 0,
             "zcr": 0,
         }
-    return JsonResponse(data)
-
-# PAGES
+    return JsonResponse(result)
 
 class MyPage(Page):
-    form_model = "player"
-    form_fields = ["analyse_audio", "video_path"]
+    form_model = 'player'
+    form_fields = ['analyse_audio', 'video_path']
 
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
         if player.analyse_audio:
-            threading.Thread(target=start_audio_analysis, args=(player.video_path,)).start()
+            threading.Thread(target=extract_audio, args=(player.video_path,)).start()
 
 class Results(Page):
     @staticmethod
     def vars_for_template(player: Player):
-        if os.path.exists('Meeting_Analyse/audio_analysis.json'):
-            with open('Meeting_Analyse/audio_analysis.json', 'r') as file:
-                result = json.load(file)
-        else:
-            result = {
-                "mean_pitch": 0,
-                "std_pitch": 0,
-                "hnr": 0,
-                "zcr": 0,
-            }
+        # Ensure that the video path is correctly formatted
         return {
-            "result": result,
-            "analyse_audio": player.analyse_audio
+            "video_path": f"/static/videos/{os.path.basename(player.video_path)}"
         }
 
 page_sequence = [MyPage, Results]

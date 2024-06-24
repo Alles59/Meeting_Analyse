@@ -1,11 +1,11 @@
 {% block title %}
-    Page title
+    Results
 {% endblock %}
 {% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video auswählen und abspielen</title>
+    <title>Video Ergebnisse</title>
 </head>
 <body>
     <!-- Video player -->
@@ -33,7 +33,7 @@
                 videoPlayer.load();
                 videoPlayer.play();
 
-                // Send the file path to the backend
+                // Send the file to the backend
                 var formData = new FormData();
                 formData.append('videoFile', file);
 
@@ -49,16 +49,15 @@
             }
         });
 
-        async function fetchResults() {
-            const response = await fetch('/fetch_audio_analysis');
+        document.getElementById('videoPlayer').addEventListener('timeupdate', async function() {
+            var currentTime = Math.floor(this.currentTime);
+            const response = await fetch(`/fetch_audio_analysis?time=${currentTime}`);
             const data = await response.json();
             document.getElementById('mean_pitch_value').innerText = data.mean_pitch;
             document.getElementById('std_pitch_value').innerText = data.std_pitch;
             document.getElementById('hnr_value').innerText = data.hnr;
             document.getElementById('zcr_value').innerText = data.zcr;
-        }
-
-        setInterval(fetchResults, 5000); // Fetch results every 5 seconds
+        });
     </script>
 </body>
 {% endblock %}
