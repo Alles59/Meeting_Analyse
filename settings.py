@@ -7,7 +7,7 @@ SESSION_CONFIGS = [
         num_demo_participants=1,
         app_sequence=['Meeting_Analyse'],
     ),
-]
+] 
 
 INSTALLED_APPS = ['otree', 'Meeting_Analyse']
 
