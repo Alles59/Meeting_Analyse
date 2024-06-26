@@ -25,7 +25,7 @@
 
         async function fetchResults() {
             try {
-                const response = await fetch('/static/global/audio_analysis.json'); // Pfad zur JSON-Datei sicherstellen
+                const response = await fetch('/static/global/audio_analysis.json'); // Korrekte Pfadangabe
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
@@ -33,6 +33,25 @@
                 console.log('Audioanalyse-Daten:', analysisData); // Daten zur Überprüfung ausgeben
             } catch (error) {
                 console.error('Fehler beim Abrufen der Audioanalyse:', error);
+            }
+        }
+
+        function updateResults() {
+            var videoPlayer = document.getElementById('videoPlayer');
+            var currentTime = Math.floor(videoPlayer.currentTime / 5) * 5; // Auf die nächsten 5 Sekunden runden
+            console.log('Aktuelle Zeit:', currentTime); // Ausgabe des aktuellen Zeitstempels
+            if (analysisData[currentTime]) {
+                console.log('Daten für aktuellen Zeitstempel:', analysisData[currentTime]); // Ausgabe der Daten für den aktuellen Zeitstempel
+                document.getElementById('mean_pitch_value').innerText = analysisData[currentTime].mean_pitch;
+                document.getElementById('std_pitch_value').innerText = analysisData[currentTime].std_pitch;
+                document.getElementById('hnr_value').innerText = analysisData[currentTime].hnr;
+                document.getElementById('zcr_value').innerText = analysisData[currentTime].zcr;
+            } else {
+                console.log('Keine Daten für aktuellen Zeitstempel vorhanden.'); // Fehlermeldung wenn keine Daten vorhanden
+                document.getElementById('mean_pitch_value').innerText = "N/A";
+                document.getElementById('std_pitch_value').innerText = "N/A";
+                document.getElementById('hnr_value').innerText = "N/A";
+                document.getElementById('zcr_value').innerText = "N/A";
             }
         }
 
@@ -44,26 +63,17 @@
                 videoPlayer.src = fileURL;
                 videoPlayer.load();
                 videoPlayer.play();
+
+                // Start fetching results periodically
+                setInterval(fetchResults, 5000); // Alle 5 Sekunden Ergebnisse abrufen
             }
         });
 
         document.getElementById('videoPlayer').addEventListener('timeupdate', function() {
-            var videoPlayer = document.getElementById('videoPlayer');
-            var currentTime = Math.floor(videoPlayer.currentTime / 5) * 5; // Auf die nächsten 5 Sekunden runden
-            if (analysisData[currentTime]) {
-                document.getElementById('mean_pitch_value').innerText = analysisData[currentTime].mean_pitch;
-                document.getElementById('std_pitch_value').innerText = analysisData[currentTime].std_pitch;
-                document.getElementById('hnr_value').innerText = analysisData[currentTime].hnr;
-                document.getElementById('zcr_value').innerText = analysisData[currentTime].zcr;
-            } else {
-                document.getElementById('mean_pitch_value').innerText = "N/A";
-                document.getElementById('std_pitch_value').innerText = "N/A";
-                document.getElementById('hnr_value').innerText = "N/A";
-                document.getElementById('zcr_value').innerText = "N/A";
-            }
+            updateResults();
         });
 
-        // Daten beim Laden der Seite abrufen
+        // Initialer Aufruf, um sicherzustellen, dass die Daten beim Laden der Seite abgerufen werden
         fetchResults();
     </script>
 </body>

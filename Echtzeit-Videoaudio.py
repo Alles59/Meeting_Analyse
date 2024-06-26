@@ -79,12 +79,12 @@ def main(video_path, output_path):
 
         for i in range(start_frame, end_frame, int(sample_rate * 0.1)):
             sub_segment = audio_data[i:i + int(sample_rate * 0.1)]
-            mean_pitch, std_pitch, hnr, zcr = analyze_audio(sub_segment, sample_rate)
-
-            mean_pitch_values.append(mean_pitch)
-            std_pitch_values.append(std_pitch)
-            hnr_values.append(hnr)
-            zcr_values.append(zcr)
+            if len(sub_segment) > 0:
+                mean_pitch, std_pitch, hnr, zcr = analyze_audio(sub_segment, sample_rate)
+                mean_pitch_values.append(mean_pitch)
+                std_pitch_values.append(std_pitch)
+                hnr_values.append(hnr)
+                zcr_values.append(zcr)
 
         analysis_results[int(timestamp)] = {
             "mean_pitch": np.nanmean(mean_pitch_values) if mean_pitch_values else 0,
