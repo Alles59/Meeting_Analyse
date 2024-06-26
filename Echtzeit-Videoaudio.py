@@ -104,5 +104,5 @@ if __name__ == "__main__":
         sys.exit(1)
 
     video_path = sys.argv[1]
-    output_path = sys.argv[2]
+    output_path = "_static/global/audio_analysis.json"
     main(video_path, output_path)
