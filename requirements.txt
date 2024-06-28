@@ -7,7 +7,6 @@ otree
 pyaudio
 numpy
 praat-parselmouth
-flask
 django
 moviepy
 scipy
