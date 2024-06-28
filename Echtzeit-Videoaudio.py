@@ -3,7 +3,6 @@ import parselmouth
 import moviepy.editor as mp
 import tempfile
 import os
-import wave
 import json
 import sys
 
@@ -23,7 +22,6 @@ def calculate_pitch(sound):
         std_pitch = 0
 
     return mean_pitch, std_pitch
-
 
 def calculate_hnr(sound):
     harmonicity = sound.to_harmonicity_cc(time_step=0.01, minimum_pitch=75)  # Anpassung des minimalen Pitches
@@ -53,45 +51,30 @@ def process_video(video_path):
         audio.write_audiofile(temp_wav_file.name, fps=44100)
         temp_wav_path = temp_wav_file.name
 
-    with wave.open(temp_wav_path, 'rb') as wav_file:
-        sample_rate = wav_file.getframerate()
-        n_frames = wav_file.getnframes()
-        audio_data = np.frombuffer(wav_file.readframes(n_frames), dtype=np.int16).astype(np.float32)
+    sound = parselmouth.Sound(temp_wav_path)
 
     os.remove(temp_wav_path)
 
-    return audio_data, sample_rate, video.duration
+    return sound, video.duration
 
 def main(video_path, output_path):
-    audio_data, sample_rate, duration = process_video(video_path)
+    sound, duration = process_video(video_path)
     interval = 5
     timestamps = np.arange(0, duration, interval)
     analysis_results = {}
 
     for timestamp in timestamps:
-        start_frame = int(timestamp * sample_rate)
-        end_frame = int((timestamp + interval) * sample_rate)
-        audio_segment = audio_data[start_frame:end_frame]
-
-        mean_pitch_values = []
-        std_pitch_values = []
-        hnr_values = []
-        zcr_values = []
-
-        for i in range(0, len(audio_segment), int(sample_rate * 0.1)):
-            sub_segment = audio_segment[i:i + int(sample_rate * 0.1)]
-            if len(sub_segment) > 0:
-                mean_pitch, std_pitch, hnr, zcr = analyze_audio(sub_segment, sample_rate)
-                mean_pitch_values.append(mean_pitch)
-                std_pitch_values.append(std_pitch)
-                hnr_values.append(hnr)
-                zcr_values.append(zcr)
+        start_time = timestamp
+        end_time = timestamp + interval
+        sub_sound = sound.extract_part(from_time=start_time, to_time=end_time, preserve_times=True)
+        
+        mean_pitch, std_pitch, hnr, zcr = analyze_audio(sub_sound.values[0], sub_sound.sampling_frequency)
 
         analysis_results[int(timestamp)] = {
-            "mean_pitch": np.nanmean(mean_pitch_values) if mean_pitch_values else 0,
-            "std_pitch": np.nanmean(std_pitch_values) if std_pitch_values else 0,
-            "hnr": np.nanmean(hnr_values) if hnr_values else 0,
-            "zcr": np.nanmean(zcr_values) if zcr_values else 0
+            "mean_pitch": mean_pitch,
+            "std_pitch": std_pitch,
+            "hnr": hnr,
+            "zcr": zcr
         }
 
     with open(output_path, 'w') as outfile:
