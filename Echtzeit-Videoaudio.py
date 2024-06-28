@@ -8,7 +8,7 @@ import json
 import sys
 
 def calculate_pitch(sound):
-    pitch = sound.to_pitch(time_step=0.01, pitch_floor=50, pitch_ceiling=500)
+    pitch = sound.to_pitch_ac(time_step=0.01, pitch_floor=75, pitch_ceiling=600)  # Verwendung der 'filtered autocorrelation' Methode
     pitch_values = pitch.selected_array['frequency']
     pitch_values = pitch_values[pitch_values != 0]
 
@@ -24,8 +24,9 @@ def calculate_pitch(sound):
 
     return mean_pitch, std_pitch
 
+
 def calculate_hnr(sound):
-    harmonicity = sound.to_harmonicity_cc(time_step=0.01, minimum_pitch=50)
+    harmonicity = sound.to_harmonicity_cc(time_step=0.01, minimum_pitch=75)  # Anpassung des minimalen Pitches
     hnr_values = harmonicity.values[harmonicity.values != -200]
     hnr = np.mean(hnr_values) if len(hnr_values) > 0 else 0
     return hnr
@@ -77,8 +78,8 @@ def main(video_path, output_path):
         hnr_values = []
         zcr_values = []
 
-        for i in range(start_frame, end_frame, int(sample_rate * 0.1)):
-            sub_segment = audio_data[i:i + int(sample_rate * 0.1)]
+        for i in range(0, len(audio_segment), int(sample_rate * 0.1)):
+            sub_segment = audio_segment[i:i + int(sample_rate * 0.1)]
             if len(sub_segment) > 0:
                 mean_pitch, std_pitch, hnr, zcr = analyze_audio(sub_segment, sample_rate)
                 mean_pitch_values.append(mean_pitch)

@@ -24,8 +24,10 @@
         let analysisData = {};
 
         async function fetchResults() {
+            const randomParam = Math.floor(Math.random() * 1000000); // Zufälligen Parameter hinzufügen
+            const url = `/static/global/audio_analysis.json?random=${randomParam}`;
             try {
-                const response = await fetch('/static/global/audio_analysis.json'); // Korrekte Pfadangabe
+                const response = await fetch(url); // Korrekte Pfadangabe
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
