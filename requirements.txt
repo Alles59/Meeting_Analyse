@@ -1,12 +1,10 @@
 # oTree-may-overwrite-this-file
 # IF YOU MODIFY THIS FILE, remove this comment.
 # otherwise, oTree will automatically overwrite it.
-otree>=5.0.0a21
-psycopg2>=2.8.4
-otree
-pyaudio
-numpy
-praat-parselmouth
-django
-moviepy
-scipy
+otree==5.4.0
+moviepy==1.0.3
+numpy==1.22.4
+parselmouth==0.3.3
+pydub==0.25.1
+openai-whisper==20230314
+whisper-timestamped==0.0.1
