@@ -1,7 +1,6 @@
 from otree.api import *
 import threading
 import os
-import json
 
 doc = """
 Your app description
@@ -25,15 +24,16 @@ class Player(BasePlayer):
     ])
     video_path = models.StringField()
 
-def extract_audio(video_path):
+def extract_audio_and_analyze(video_path):
     abs_video_path = os.path.abspath(video_path)
-    os.system(f'python extract_audio.py "{abs_video_path}"')
-    analyze_audio(abs_video_path)
-
-def analyze_audio(video_path):
-    abs_video_path = os.path.abspath(video_path)
-    output_path = os.path.join(os.path.dirname(__file__), 'audio_analysis.json')
-    os.system(f'python Echtzeit-Videoaudio.py "{abs_video_path}" "{output_path}"')
+    audio_output_path = os.path.join(os.path.dirname(__file__), 'audio_analysis.json')
+    filler_output_path = os.path.join(os.path.dirname(__file__), 'filler_word_analysis.json')
+    
+    # Run audio analysis
+    os.system(f'python Echtzeit-Videoaudio.py "{abs_video_path}" "{audio_output_path}"')
+    
+    # Run filler word analysis
+    os.system(f'python Transkribition_live.py "{abs_video_path}" "{filler_output_path}"')
 
 class MyPage(Page):
     form_model = 'player'
@@ -42,7 +42,7 @@ class MyPage(Page):
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
         if player.analyse_audio:
-            threading.Thread(target=extract_audio, args=(player.video_path,)).start()
+            threading.Thread(target=extract_audio_and_analyze, args=(player.video_path,)).start()
 
 class Results(Page):
     @staticmethod

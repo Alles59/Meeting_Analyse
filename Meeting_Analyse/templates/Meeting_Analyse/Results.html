@@ -18,42 +18,65 @@
         <div id="std_pitch" class="result-box">Standard Deviation of Pitch: <span id="std_pitch_value"></span></div>
         <div id="hnr" class="result-box">Harmonicity (HNR): <span id="hnr_value"></span></div>
         <div id="zcr" class="result-box">Zero Crossing Rate: <span id="zcr_value"></span></div>
+        <div id="fillers" class="result-box">Filler Words Count: <span id="fillers_value"></span></div>
     </div>
 
     <script>
         let analysisData = {};
+        let fillerData = {};
 
         async function fetchResults() {
             const randomParam = Math.floor(Math.random() * 1000000); // Zufälligen Parameter hinzufügen
-            const url = `/static/global/audio_analysis.json?random=${randomParam}`;
+            const audioUrl = `/static/global/audio_analysis.json?random=${randomParam}`;
+            const fillerUrl = `/static/global/filler_word_analysis.json?random=${randomParam}`;
             try {
-                const response = await fetch(url); // Korrekte Pfadangabe
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                const audioResponse = await fetch(audioUrl);
+                if (!audioResponse.ok) {
+                    throw new Error(`HTTP error! Status: ${audioResponse.status}`);
                 }
-                analysisData = await response.json();
+                analysisData = await audioResponse.json();
+
+                const fillerResponse = await fetch(fillerUrl);
+                if (!fillerResponse.ok) {
+                    throw new Error(`HTTP error! Status: ${fillerResponse.status}`);
+                }
+                fillerData = await fillerResponse.json();
+
                 console.log('Audioanalyse-Daten:', analysisData); // Daten zur Überprüfung ausgeben
+                console.log('Filler-Wort-Daten:', fillerData); // Daten zur Überprüfung ausgeben
             } catch (error) {
-                console.error('Fehler beim Abrufen der Audioanalyse:', error);
+                console.error('Fehler beim Abrufen der Analyse:', error);
             }
         }
 
         function updateResults() {
             var videoPlayer = document.getElementById('videoPlayer');
-            var currentTime = Math.floor(videoPlayer.currentTime / 5) * 5; // Auf die nächsten 5 Sekunden runden
+            var currentTime = Math.floor(videoPlayer.currentTime); // Sekundenintervall
+            var currentMinute = Math.floor(videoPlayer.currentTime / 60); // Minutenintervall
+
             console.log('Aktuelle Zeit:', currentTime); // Ausgabe des aktuellen Zeitstempels
-            if (analysisData[currentTime]) {
-                console.log('Daten für aktuellen Zeitstempel:', analysisData[currentTime]); // Ausgabe der Daten für den aktuellen Zeitstempel
-                document.getElementById('mean_pitch_value').innerText = analysisData[currentTime].mean_pitch;
-                document.getElementById('std_pitch_value').innerText = analysisData[currentTime].std_pitch;
-                document.getElementById('hnr_value').innerText = analysisData[currentTime].hnr;
-                document.getElementById('zcr_value').innerText = analysisData[currentTime].zcr;
+
+            var interval = Math.floor(currentTime / 5) * 5; // Auf das nächste 5-Sekunden-Intervall runden
+            console.log('Intervall:', interval); // Ausgabe des Intervalls
+
+            if (analysisData[interval]) {
+                console.log('Daten für aktuelles Intervall:', analysisData[interval]); // Ausgabe der Daten für das aktuelle Intervall
+                document.getElementById('mean_pitch_value').innerText = analysisData[interval].mean_pitch;
+                document.getElementById('std_pitch_value').innerText = analysisData[interval].std_pitch;
+                document.getElementById('hnr_value').innerText = analysisData[interval].hnr;
+                document.getElementById('zcr_value').innerText = analysisData[interval].zcr;
             } else {
-                console.log('Keine Daten für aktuellen Zeitstempel vorhanden.'); // Fehlermeldung wenn keine Daten vorhanden
+                console.log('Keine Daten für aktuelles Intervall vorhanden.'); // Fehlermeldung wenn keine Daten vorhanden
                 document.getElementById('mean_pitch_value').innerText = "N/A";
                 document.getElementById('std_pitch_value').innerText = "N/A";
                 document.getElementById('hnr_value').innerText = "N/A";
                 document.getElementById('zcr_value').innerText = "N/A";
+            }
+
+            if (fillerData[currentMinute]) {
+                document.getElementById('fillers_value').innerText = fillerData[currentMinute].fillers_count;
+            } else {
+                document.getElementById('fillers_value').innerText = "N/A";
             }
         }
 
