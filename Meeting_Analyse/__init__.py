@@ -18,10 +18,6 @@ class Group(BaseGroup):
     pass
 
 class Player(BasePlayer):
-    analyse_audio = models.BooleanField(choices=[
-        [False, 'off'],
-        [True, 'on'],
-    ])
     video_path = models.StringField()
 
 def extract_audio_and_analyze(video_path):
@@ -37,12 +33,11 @@ def extract_audio_and_analyze(video_path):
 
 class MyPage(Page):
     form_model = 'player'
-    form_fields = ['analyse_audio', 'video_path']
+    form_fields = ['video_path']
 
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
-        if player.analyse_audio:
-            threading.Thread(target=extract_audio_and_analyze, args=(player.video_path,)).start()
+        threading.Thread(target=extract_audio_and_analyze, args=(player.video_path,)).start()
 
 class Results(Page):
     @staticmethod
