@@ -7,7 +7,7 @@ import json
 import sys
 
 def calculate_pitch(sound):
-    pitch = sound.to_pitch_ac(time_step=0.01, pitch_floor=75, pitch_ceiling=600)
+    pitch = sound.to_pitch_ac(time_step=0.01, pitch_floor=75, pitch_ceiling=500)
     pitch_values = pitch.selected_array['frequency']
     pitch_values = pitch_values[pitch_values != 0]
 
