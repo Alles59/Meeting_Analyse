@@ -18,7 +18,8 @@
         <div id="std_pitch" class="result-box">Standard Deviation of Pitch: <span id="std_pitch_value"></span></div>
         <div id="hnr" class="result-box">Harmonicity (HNR): <span id="hnr_value"></span></div>
         <div id="zcr" class="result-box">Zero Crossing Rate: <span id="zcr_value"></span></div>
-        <div id="fillers" class="result-box">Filler Words Count: <span id="fillers_value"></span></div>
+        <div id="fillers" class="result-box">Filler Words Count per Minute: <span id="fillers_value"></span></div>
+        <div id="gender" class="result-box">Detected Gender: <span id="gender_value"></span></div>
     </div>
 
     <script>
@@ -65,12 +66,14 @@
                 document.getElementById('std_pitch_value').innerText = analysisData[interval].std_pitch;
                 document.getElementById('hnr_value').innerText = analysisData[interval].hnr;
                 document.getElementById('zcr_value').innerText = analysisData[interval].zcr;
+                document.getElementById('gender_value').innerText = analysisData[interval].gender;
             } else {
                 console.log('Keine Daten für aktuelles Intervall vorhanden.'); // Fehlermeldung wenn keine Daten vorhanden
                 document.getElementById('mean_pitch_value').innerText = "N/A";
                 document.getElementById('std_pitch_value').innerText = "N/A";
                 document.getElementById('hnr_value').innerText = "N/A";
                 document.getElementById('zcr_value').innerText = "N/A";
+                document.getElementById('gender_value').innerText = "N/A";
             }
 
             if (fillerData[currentMinute]) {
@@ -88,6 +91,9 @@
                 videoPlayer.src = fileURL;
                 videoPlayer.load();
                 videoPlayer.play();
+
+                // Initial results fetch
+                fetchResults().then(() => updateResults());
 
                 // Start fetching results periodically
                 setInterval(fetchResults, 5000); // Alle 5 Sekunden Ergebnisse abrufen

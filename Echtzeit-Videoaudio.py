@@ -7,7 +7,7 @@ import json
 import sys
 
 def calculate_pitch(sound):
-    pitch = sound.to_pitch_ac(time_step=0.01, pitch_floor=75, pitch_ceiling=600)  # Verwendung der 'filtered autocorrelation' Methode
+    pitch = sound.to_pitch_ac(time_step=0.01, pitch_floor=75, pitch_ceiling=600)
     pitch_values = pitch.selected_array['frequency']
     pitch_values = pitch_values[pitch_values != 0]
 
@@ -24,7 +24,7 @@ def calculate_pitch(sound):
     return mean_pitch, std_pitch
 
 def calculate_hnr(sound):
-    harmonicity = sound.to_harmonicity_cc(time_step=0.01, minimum_pitch=75)  # Anpassung des minimalen Pitches
+    harmonicity = sound.to_harmonicity_cc(time_step=0.01, minimum_pitch=75)
     hnr_values = harmonicity.values[harmonicity.values != -200]
     hnr = np.mean(hnr_values) if len(hnr_values) > 0 else 0
     return hnr
@@ -43,6 +43,12 @@ def analyze_audio(audio_data, sample_rate):
 
     return mean_pitch, std_pitch, hnr, zcr
 
+def detect_gender(mean_pitch):
+    if mean_pitch > 165:
+        return "female"
+    else:
+        return "male"
+
 def process_video(video_path):
     video = mp.VideoFileClip(video_path)
     audio = video.audio
@@ -52,9 +58,7 @@ def process_video(video_path):
         temp_wav_path = temp_wav_file.name
 
     sound = parselmouth.Sound(temp_wav_path)
-
     os.remove(temp_wav_path)
-
     return sound, video.duration
 
 def main(video_path, output_path):
@@ -69,12 +73,14 @@ def main(video_path, output_path):
         sub_sound = sound.extract_part(from_time=start_time, to_time=end_time, preserve_times=True)
         
         mean_pitch, std_pitch, hnr, zcr = analyze_audio(sub_sound.values[0], sub_sound.sampling_frequency)
+        gender = detect_gender(mean_pitch)
 
         analysis_results[int(timestamp)] = {
             "mean_pitch": mean_pitch,
             "std_pitch": std_pitch,
             "hnr": hnr,
-            "zcr": zcr
+            "zcr": zcr,
+            "gender": gender
         }
 
     with open(output_path, 'w') as outfile:
