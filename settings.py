@@ -7,12 +7,24 @@ SESSION_CONFIGS = [
         num_demo_participants=1,
         app_sequence=['Meeting_Analyse'],
     ),
-] 
+    dict(
+        name='Live_Audio',
+        display_name="Live Audio",
+        num_demo_participants=1,
+        app_sequence=['Live_Audio'],
+    )
+]
 
-INSTALLED_APPS = ['otree', 'Meeting_Analyse']
+INSTALLED_APPS = [
+    'otree', 
+    'Meeting_Analyse',
+    "Live_Audio"
+]
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
+    real_world_currency_per_point=1.00, 
+    participation_fee=0.00, 
+    doc=""
 )
 
 PARTICIPANT_FIELDS = []

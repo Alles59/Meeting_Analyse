@@ -1,0 +1,374 @@
+{% block title %}
+Ergebnisse
+{% endblock %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Ergebnisse</title>
+    <link rel="stylesheet" href="{% static 'global/thermometer.css' %}">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        .video-section {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .analysis-section {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+        .video-section video {
+            width: 100%;
+            height: auto;
+        }
+        .file-input, .control-buttons {
+            margin-top: 5px;
+        }
+        .result-box h3 {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .thermometer {
+            width: 60px;
+            height: 200px;
+            position: relative;
+        }
+        .thermometer-labels {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 10px;
+            padding: 2px 0;
+        }
+        .thermometer-inner {
+            width: 100%;
+            background-color: green;
+            transition: height 0.5s, background-color 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ergebnisse</h1>
+    <div class="container">
+        <div class="video-section">
+            <video id="videoPlayer" controls>
+                Ihr Browser unterstützt das Video-Tag nicht.
+            </video>
+            <div class="file-input">
+                <input type="file" id="videoInput" accept="video/*">
+            </div>
+            <div class="control-buttons">
+                <button id="stopButton">Analyse stoppen</button>
+            </div>
+        </div>
+        <div class="analysis-section">
+            <div id="mean_pitch" class="result-box">
+                <h3>Stress</h3>
+                <div class="thermometer">
+                    <div class="thermometer-outer">
+                        <div class="thermometer-inner" id="mean_pitch_value"></div>
+                    </div>
+                    <div class="thermometer-labels">
+                        <span>Gelassenheit</span>
+                        <span>Stress</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="std_pitch" class="result-box">
+                <h3>Monotonie</h3>
+                <div class="thermometer">
+                    <div class="thermometer-outer">
+                        <div class="thermometer-inner" id="std_pitch_value"></div>
+                    </div>
+                    <div class="thermometer-labels">
+                        <span>Sehr variabel</span>
+                        <span>Monoton</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="hnr" class="result-box">
+                <h3>HNR</h3>
+                <div class="thermometer">
+                    <div class="thermometer-outer">
+                        <div class="thermometer-inner" id="hnr_value"></div>
+                    </div>
+                    <div class="thermometer-labels">
+                        <span>Sehr gut</span>
+                        <span>Gut</span>
+                        <span>Schlecht</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="zcr" class="result-box">
+                <h3>Sprachklarheit</h3>
+                <div class="thermometer">
+                    <div class="thermometer-outer">
+                        <div class="thermometer-inner" id="zcr_value"></div>
+                    </div>
+                    <div class="thermometer-labels">
+                        <span>Hoch</span>
+                        <span>Niedrig</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let analysisData = {};
+        let intervalId;
+
+        async function fetchResults() {
+            const randomParam = Math.floor(Math.random() * 1000000); // Zufälligen Parameter hinzufügen
+            const audioUrl = `/static/global/audio_analysis.json?random=${randomParam}`;
+            try {
+                const audioResponse = await fetch(audioUrl, { cache: "no-store" });
+                if (!audioResponse.ok) {
+                    throw new Error(`HTTP error! Status: ${audioResponse.status}`);
+                }
+                analysisData = await audioResponse.json();
+
+                console.log('Audioanalyse-Daten:', analysisData); // Daten zur Überprüfung ausgeben
+                updateResults(); // Ergebnisse nach dem Abrufen der Daten aktualisieren
+            } catch (error) {
+                console.error('Fehler beim Abrufen der Analyse:', error);
+            }
+        }
+
+        function updateResults() {
+            var videoPlayer = document.getElementById('videoPlayer');
+            var currentTime = Math.floor(videoPlayer.currentTime); // Sekundenintervall
+
+            console.log('Aktuelle Zeit:', currentTime); // Ausgabe des aktuellen Zeitstempels
+
+            var interval = Math.floor(currentTime / 5) * 5; // Auf das nächste 5-Sekunden-Intervall runden
+            console.log('Intervall:', interval); // Ausgabe des Intervalls
+
+            if (analysisData && analysisData.mean_pitch !== undefined) {
+                console.log('Daten für aktuelles Intervall:', analysisData); // Ausgabe der Daten für das aktuelle Intervall
+
+                const gender = analysisData.gender;
+                const meanPitchScore = updateThermometer('mean_pitch_value', analysisData.mean_pitch, gender);
+                const stdPitchScore = updateThermometer('std_pitch_value', analysisData.std_pitch, gender);
+                const hnrScore = updateThermometer('hnr_value', analysisData.hnr, gender);
+                const zcrScore = updateThermometer('zcr_value', analysisData.zcr, gender);
+
+                const teamEfficiencyScore = meanPitchScore + stdPitchScore + hnrScore + zcrScore;
+                updateTeameffizienz('teameffizienz_value', teamEfficiencyScore);
+            } else {
+                console.log('Keine Daten für aktuelles Intervall vorhanden.'); // Fehlermeldung wenn keine Daten vorhanden
+                resetThermometer('mean_pitch_value');
+                resetThermometer('std_pitch_value');
+                resetThermometer('hnr_value');
+                resetThermometer('zcr_value');
+                resetTeameffizienz('teameffizienz_value');
+            }
+        }
+
+        function updateThermometer(id, value, gender) {
+            const element = document.getElementById(id);
+            if (!element) return;
+            let score = 0;
+            if (id === 'mean_pitch_value') {
+                if (gender === 'male') {
+                    if (value < 100) {
+                        element.style.height = '100%';
+                        element.style.backgroundColor = 'green';
+                        score = 4;
+                    } else if (value < 140) {
+                        element.style.height = '75%';
+                        element.style.backgroundColor = 'yellow';
+                        score = 3;
+                    } else if (value < 180) {
+                        element.style.height = '50%';
+                        element.style.backgroundColor = 'orange';
+                        score = 2;
+                    } else {
+                        element.style.height = '25%';
+                        element.style.backgroundColor = 'red';
+                        score = 1;
+                    }
+                } else if (gender === 'female') {
+                    if (value < 180) {
+                        element.style.height = '100%';
+                        element.style.backgroundColor = 'green';
+                        score = 4;
+                    } else if (value < 200) {
+                        element.style.height = '75%';
+                        element.style.backgroundColor = 'yellow';
+                        score = 3;
+                    } else if (value < 250) {
+                        element.style.height = '50%';
+                        element.style.backgroundColor = 'orange';
+                        score = 2;
+                    } else {
+                        element.style.height = '25%';
+                        element.style.backgroundColor = 'red';
+                        score = 1;
+                    }
+                }
+            } else if (id === 'std_pitch_value') {
+                if (value < 10) {
+                    element.style.height = '0%';
+                    element.style.backgroundColor = 'red';
+                    score = 1;
+                } else if (value < 20) {
+                    element.style.height = '25%';
+                    element.style.backgroundColor = 'orange';
+                    score = 2;
+                } else if (value < 30) {
+                    element.style.height = '75%';
+                    element.style.backgroundColor = 'yellow';
+                    score = 3;
+                } else {
+                    element.style.height = '100%';
+                    element.style.backgroundColor = 'green';
+                    score = 4;
+                }
+            } else if (id === 'hnr_value') {
+                if (value < 10) {
+                    element.style.height = '25%';
+                    element.style.backgroundColor = 'red';
+                    score = 1;
+                } else if (value < 15) {
+                    element.style.height = '50%';
+                    element.style.backgroundColor = 'orange';
+                    score = 2;
+                } else if (value < 25) {
+                    element.style.height = '75%';
+                    element.style.backgroundColor = 'yellow';
+                    score = 3;
+                } else {
+                    element.style.height = '100%';
+                    element.style.backgroundColor = 'green';
+                    score = 4;
+                }
+            } else if (id === 'zcr_value') {
+                if (value < 0.02) {
+                    element.style.height = '100%';
+                    element.style.backgroundColor = 'green';
+                    score = 4;
+                } else if (value < 0.05) {
+                    element.style.height = '50%';
+                    element.style.backgroundColor = 'yellow';
+                    score = 3;
+                } else if (value < 0.1) {
+                    element.style.height = '25%';
+                    element.style.backgroundColor = 'orange';
+                    score = 2;
+                } else {
+                    element.style.height = '0%';
+                    element.style.backgroundColor = 'red';
+                    score = 1;
+                }
+            }
+            return score;
+        }
+
+        function updateFillers(id, value) {
+            const element = document.getElementById(id);
+            if (!element) return;
+            let score = 0;
+            if (value <= 1) {
+                element.style.backgroundColor = 'green';
+                score = 4;
+            } else if (value <= 3) {
+                element.style.backgroundColor = 'yellow';
+                score = 3;
+            } else if (value <= 6) {
+                element.style.backgroundColor = 'orange';
+                score = 2;
+            } else {
+                element.style.backgroundColor = 'red';
+                score = 1;
+            }
+            return score;
+        }
+
+        function updateTeameffizienz(id, value) {
+            const element = document.getElementById(id);
+            if (!element) return;
+            element.style.width = `${(value / 20) * 100}%`;
+            element.textContent = `${value}/20`;
+            if (value <= 5) {
+                element.style.backgroundColor = 'red';
+            } else if (value <= 10) {
+                element.style.backgroundColor = 'orange';
+            } else if (value <= 15) {
+                element.style.backgroundColor = 'yellow';
+            } else {
+                element.style.backgroundColor = 'green';
+            }
+        }
+
+        function resetThermometer(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.height = '0%';
+                element.style.backgroundColor = 'grey';
+            }
+        }
+
+        function resetFillers(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.backgroundColor = 'grey';
+            }
+        }
+
+        function resetTeameffizienz(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.width = '0%';
+                element.style.backgroundColor = 'grey';
+                element.textContent = '0/20';
+            }
+        }
+
+        document.getElementById('videoInput').addEventListener('change', function(event) {
+            var file = event.target.files[0];
+            if (file) {
+                var videoPlayer = document.getElementById('videoPlayer');
+                var fileURL = URL.createObjectURL(file);
+                videoPlayer.src = fileURL;
+                videoPlayer.load();
+                videoPlayer.play();
+
+                // Initial results fetch
+                fetchResults();
+
+                // Start fetching results periodically
+                intervalId = setInterval(() => {
+                    fetchResults();
+                    updateResults();
+                }, 1000); // Alle 1 Sekunde Ergebnisse abrufen und aktualisieren
+            }
+        });
+
+        document.getElementById('stopButton').addEventListener('click', function() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                console.log('Analyse gestoppt');
+            }
+        });
+
+        // Initialer Aufruf, um sicherzustellen, dass die Daten beim Laden der Seite abgerufen werden
+        intervalId = setInterval(() => {
+            fetchResults();
+            updateResults();
+        }, 5000); // Alle 1 Sekunde Ergebnisse abrufen und aktualisieren
+    </script>
+</body>
+{% endblock %}
