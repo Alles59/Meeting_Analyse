@@ -54,6 +54,17 @@ Ergebnisse
             background-color: green;
             transition: height 0.5s, background-color 0.5s;
         }
+        .teameffizienz {
+            margin-top: 20px;
+            width: 100%;
+        }
+        .teameffizienz .bar {
+            height: 30px;
+            background-color: green;
+            text-align: center;
+            color: white;
+            transition: width 0.5s;
+        }
     </style>
 </head>
 <body>
@@ -69,6 +80,10 @@ Ergebnisse
             <div class="control-buttons">
                 <button id="stopButton">Analyse stoppen</button>
             </div>
+        </div>
+        <div class="teameffizienz">
+            <h3>Teameffizienz</h3>
+            <div class="bar" id="teameffizienz_value">0/16</div>
         </div>
         <div class="analysis-section">
             <div id="mean_pitch" class="result-box">

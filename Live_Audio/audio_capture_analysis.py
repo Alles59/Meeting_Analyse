@@ -21,7 +21,7 @@ p = pyaudio.PyAudio()
 
 # Indices of the desired devices
 mic_index = 1  # Set your microphone device index here
-stereo_index = 4  # Set your stereo mix device index here
+stereo_index = 2  # Set your stereo mix device index here
 
 # Streams
 mic_stream = None
