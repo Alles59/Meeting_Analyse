@@ -20,8 +20,8 @@ RECORD_SECONDS = 5  # Save and analyze every 5 seconds
 p = pyaudio.PyAudio()
 
 # Indices of the desired devices
-mic_index = 1  # Set your microphone device index here
-stereo_index = 2  # Set your stereo mix device index here
+mic_index = 2  # Set your microphone device index here
+stereo_index = 1  # Set your stereo mix device index here
 
 # Streams
 mic_stream = None
@@ -178,10 +178,3 @@ signal.signal(signal.SIGTERM, handle_signal)
 
 # List devices to allow user to select the correct one
 list_audio_devices()
-
-# Example usage:
-# recording_thread = threading.Thread(target=start_recording)
-# recording_thread.daemon = True
-# recording_thread.start()
-# time.sleep(10)
-# stop_recording()

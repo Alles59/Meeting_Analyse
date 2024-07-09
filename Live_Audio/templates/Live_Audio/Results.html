@@ -1,5 +1,4 @@
 {% block title %}
-Ergebnisse
 {% endblock %}
 {% block content %}
 <head>
@@ -315,13 +314,13 @@ Ergebnisse
         function updateTeameffizienz(id, value) {
             const element = document.getElementById(id);
             if (!element) return;
-            element.style.width = `${(value / 20) * 100}%`;
-            element.textContent = `${value}/20`;
-            if (value <= 5) {
+            element.style.width = `${(value / 16) * 100}%`;
+            element.textContent = `${value}/16`;
+            if (value <= 7) {
                 element.style.backgroundColor = 'red';
             } else if (value <= 10) {
                 element.style.backgroundColor = 'orange';
-            } else if (value <= 15) {
+            } else if (value <= 13) {
                 element.style.backgroundColor = 'yellow';
             } else {
                 element.style.backgroundColor = 'green';
@@ -383,7 +382,7 @@ Ergebnisse
         intervalId = setInterval(() => {
             fetchResults();
             updateResults();
-        }, 5000); // Alle 1 Sekunde Ergebnisse abrufen und aktualisieren
+        }, 5000); // Alle 5 Sekunden Ergebnisse abrufen und aktualisieren
     </script>
 </body>
 {% endblock %}

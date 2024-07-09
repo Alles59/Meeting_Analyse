@@ -1,0 +1,2554 @@
+[
+    {
+        "start_time": 0,
+        "end_time": 5,
+        "report": {
+            "Pitch": {
+                "Median pitch": "130.347 Hz",
+                "Mean pitch": "149.933 Hz",
+                "Standard deviation": "50.582 Hz",
+                "Minimum pitch": "75.525 Hz",
+                "Maximum pitch": "266.549 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "261",
+                "Number of periods": "250",
+                "Mean period": "6.737940E-3 seconds",
+                "Standard deviation of period": "2.275435E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "60.966%   (303 / 497)",
+                "Number of voice breaks": "7",
+                "Degree of voice breaks": "8.309%   (0.415453 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.948%",
+                "Jitter (local, absolute)": "198.632E-6 seconds",
+                "Jitter (rap)": "1.427%",
+                "Jitter (ppq5)": "1.613%",
+                "Jitter (ddp)": "4.280%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "14.258%",
+                "Shimmer (local, dB)": "1.300 dB",
+                "Shimmer (apq3)": "6.247%",
+                "Shimmer (apq5)": "8.228%",
+                "Shimmer (apq11)": "10.217%",
+                "Shimmer (dda)": "18.740%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.800725",
+                "Mean noise-to-harmonics ratio": "0.302820",
+                "Mean harmonics-to-noise ratio": "7.581 dB"
+            }
+        }
+    },
+    {
+        "start_time": 5,
+        "end_time": 10,
+        "report": {
+            "Pitch": {
+                "Median pitch": "126.728 Hz",
+                "Mean pitch": "153.588 Hz",
+                "Standard deviation": "67.686 Hz",
+                "Minimum pitch": "66.682 Hz",
+                "Maximum pitch": "358.783 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "542",
+                "Number of periods": "516",
+                "Mean period": "6.494046E-3 seconds",
+                "Standard deviation of period": "2.726529E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "22.535%   (112 / 497)",
+                "Number of voice breaks": "18",
+                "Degree of voice breaks": "30.955%   (1.547746 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "3.344%",
+                "Jitter (local, absolute)": "217.180E-6 seconds",
+                "Jitter (rap)": "1.595%",
+                "Jitter (ppq5)": "1.662%",
+                "Jitter (ddp)": "4.785%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "15.128%",
+                "Shimmer (local, dB)": "1.307 dB",
+                "Shimmer (apq3)": "6.728%",
+                "Shimmer (apq5)": "8.942%",
+                "Shimmer (apq11)": "14.259%",
+                "Shimmer (dda)": "20.185%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.784076",
+                "Mean noise-to-harmonics ratio": "0.345686",
+                "Mean harmonics-to-noise ratio": "7.631 dB"
+            }
+        }
+    },
+    {
+        "start_time": 10,
+        "end_time": 15,
+        "report": {
+            "Pitch": {
+                "Median pitch": "117.480 Hz",
+                "Mean pitch": "128.102 Hz",
+                "Standard deviation": "49.632 Hz",
+                "Minimum pitch": "99.776 Hz",
+                "Maximum pitch": "492.216 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "345",
+                "Number of periods": "334",
+                "Mean period": "7.920783E-3 seconds",
+                "Standard deviation of period": "1.740485E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "45.473%   (226 / 497)",
+                "Number of voice breaks": "5",
+                "Degree of voice breaks": "45.731%   (2.286559 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.479%",
+                "Jitter (local, absolute)": "117.175E-6 seconds",
+                "Jitter (rap)": "0.653%",
+                "Jitter (ppq5)": "0.716%",
+                "Jitter (ddp)": "1.960%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.047%",
+                "Shimmer (local, dB)": "1.149 dB",
+                "Shimmer (apq3)": "4.644%",
+                "Shimmer (apq5)": "7.747%",
+                "Shimmer (apq11)": "12.928%",
+                "Shimmer (dda)": "13.931%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.854164",
+                "Mean noise-to-harmonics ratio": "0.214948",
+                "Mean harmonics-to-noise ratio": "10.508 dB"
+            }
+        }
+    },
+    {
+        "start_time": 15,
+        "end_time": 20,
+        "report": {
+            "Pitch": {
+                "Median pitch": "136.476 Hz",
+                "Mean pitch": "143.703 Hz",
+                "Standard deviation": "34.520 Hz",
+                "Minimum pitch": "109.199 Hz",
+                "Maximum pitch": "338.405 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "472",
+                "Number of periods": "456",
+                "Mean period": "6.970501E-3 seconds",
+                "Standard deviation of period": "1.392957E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "33.400%   (166 / 497)",
+                "Number of voice breaks": "14",
+                "Degree of voice breaks": "35.699%   (1.784946 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.307%",
+                "Jitter (local, absolute)": "160.805E-6 seconds",
+                "Jitter (rap)": "1.031%",
+                "Jitter (ppq5)": "1.255%",
+                "Jitter (ddp)": "3.093%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "15.728%",
+                "Shimmer (local, dB)": "1.384 dB",
+                "Shimmer (apq3)": "6.518%",
+                "Shimmer (apq5)": "8.678%",
+                "Shimmer (apq11)": "14.735%",
+                "Shimmer (dda)": "19.555%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.776245",
+                "Mean noise-to-harmonics ratio": "0.344847",
+                "Mean harmonics-to-noise ratio": "6.447 dB"
+            }
+        }
+    },
+    {
+        "start_time": 20,
+        "end_time": 25,
+        "report": {
+            "Pitch": {
+                "Median pitch": "122.529 Hz",
+                "Mean pitch": "149.868 Hz",
+                "Standard deviation": "45.286 Hz",
+                "Minimum pitch": "86.004 Hz",
+                "Maximum pitch": "230.243 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "377",
+                "Number of periods": "364",
+                "Mean period": "6.637530E-3 seconds",
+                "Standard deviation of period": "2.075032E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "48.893%   (243 / 497)",
+                "Number of voice breaks": "11",
+                "Degree of voice breaks": "37.074%   (1.853709 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.745%",
+                "Jitter (local, absolute)": "115.852E-6 seconds",
+                "Jitter (rap)": "0.796%",
+                "Jitter (ppq5)": "0.785%",
+                "Jitter (ddp)": "2.387%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "11.115%",
+                "Shimmer (local, dB)": "0.978 dB",
+                "Shimmer (apq3)": "4.488%",
+                "Shimmer (apq5)": "6.320%",
+                "Shimmer (apq11)": "10.324%",
+                "Shimmer (dda)": "13.463%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.856991",
+                "Mean noise-to-harmonics ratio": "0.222422",
+                "Mean harmonics-to-noise ratio": "10.449 dB"
+            }
+        }
+    },
+    {
+        "start_time": 25,
+        "end_time": 30,
+        "report": {
+            "Pitch": {
+                "Median pitch": "257.371 Hz",
+                "Mean pitch": "240.029 Hz",
+                "Standard deviation": "83.507 Hz",
+                "Minimum pitch": "92.941 Hz",
+                "Maximum pitch": "450.697 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "716",
+                "Number of periods": "697",
+                "Mean period": "4.144344E-3 seconds",
+                "Standard deviation of period": "1.731599E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "36.821%   (183 / 497)",
+                "Number of voice breaks": "12",
+                "Degree of voice breaks": "18.699%   (0.934962 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.654%",
+                "Jitter (local, absolute)": "110.003E-6 seconds",
+                "Jitter (rap)": "1.355%",
+                "Jitter (ppq5)": "1.687%",
+                "Jitter (ddp)": "4.064%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.595%",
+                "Shimmer (local, dB)": "1.263 dB",
+                "Shimmer (apq3)": "5.873%",
+                "Shimmer (apq5)": "7.853%",
+                "Shimmer (apq11)": "13.249%",
+                "Shimmer (dda)": "17.618%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.800434",
+                "Mean noise-to-harmonics ratio": "0.309296",
+                "Mean harmonics-to-noise ratio": "8.216 dB"
+            }
+        }
+    },
+    {
+        "start_time": 30,
+        "end_time": 35,
+        "report": {
+            "Pitch": {
+                "Median pitch": "249.151 Hz",
+                "Mean pitch": "261.574 Hz",
+                "Standard deviation": "54.206 Hz",
+                "Minimum pitch": "202.764 Hz",
+                "Maximum pitch": "500.059 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "814",
+                "Number of periods": "796",
+                "Mean period": "3.859715E-3 seconds",
+                "Standard deviation of period": "0.654703E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "32.193%   (160 / 497)",
+                "Number of voice breaks": "15",
+                "Degree of voice breaks": "29.405%   (1.470235 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.178%",
+                "Jitter (local, absolute)": "84.051E-6 seconds",
+                "Jitter (rap)": "1.124%",
+                "Jitter (ppq5)": "1.336%",
+                "Jitter (ddp)": "3.373%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "9.406%",
+                "Shimmer (local, dB)": "1.032 dB",
+                "Shimmer (apq3)": "3.429%",
+                "Shimmer (apq5)": "4.976%",
+                "Shimmer (apq11)": "10.104%",
+                "Shimmer (dda)": "10.287%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.904147",
+                "Mean noise-to-harmonics ratio": "0.137363",
+                "Mean harmonics-to-noise ratio": "13.815 dB"
+            }
+        }
+    },
+    {
+        "start_time": 35,
+        "end_time": 40,
+        "report": {
+            "Pitch": {
+                "Median pitch": "214.779 Hz",
+                "Mean pitch": "216.481 Hz",
+                "Standard deviation": "36.403 Hz",
+                "Minimum pitch": "86.630 Hz",
+                "Maximum pitch": "423.801 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "730",
+                "Number of periods": "716",
+                "Mean period": "4.629793E-3 seconds",
+                "Standard deviation of period": "0.747392E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "28.773%   (143 / 497)",
+                "Number of voice breaks": "9",
+                "Degree of voice breaks": "30.006%   (1.500304 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.853%",
+                "Jitter (local, absolute)": "85.793E-6 seconds",
+                "Jitter (rap)": "0.941%",
+                "Jitter (ppq5)": "1.145%",
+                "Jitter (ddp)": "2.824%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "8.553%",
+                "Shimmer (local, dB)": "0.903 dB",
+                "Shimmer (apq3)": "3.367%",
+                "Shimmer (apq5)": "4.970%",
+                "Shimmer (apq11)": "7.648%",
+                "Shimmer (dda)": "10.100%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.903483",
+                "Mean noise-to-harmonics ratio": "0.142474",
+                "Mean harmonics-to-noise ratio": "14.593 dB"
+            }
+        }
+    },
+    {
+        "start_time": 40,
+        "end_time": 45,
+        "report": {
+            "Pitch": {
+                "Median pitch": "218.439 Hz",
+                "Mean pitch": "223.194 Hz",
+                "Standard deviation": "81.360 Hz",
+                "Minimum pitch": "95.866 Hz",
+                "Maximum pitch": "462.239 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "641",
+                "Number of periods": "628",
+                "Mean period": "4.500041E-3 seconds",
+                "Standard deviation of period": "1.812374E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "41.046%   (204 / 497)",
+                "Number of voice breaks": "9",
+                "Degree of voice breaks": "36.544%   (1.827182 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.897%",
+                "Jitter (local, absolute)": "85.349E-6 seconds",
+                "Jitter (rap)": "0.835%",
+                "Jitter (ppq5)": "1.018%",
+                "Jitter (ddp)": "2.504%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "11.143%",
+                "Shimmer (local, dB)": "1.157 dB",
+                "Shimmer (apq3)": "4.261%",
+                "Shimmer (apq5)": "6.052%",
+                "Shimmer (apq11)": "10.713%",
+                "Shimmer (dda)": "12.784%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.877382",
+                "Mean noise-to-harmonics ratio": "0.178665",
+                "Mean harmonics-to-noise ratio": "11.689 dB"
+            }
+        }
+    },
+    {
+        "start_time": 45,
+        "end_time": 50,
+        "report": {
+            "Pitch": {
+                "Median pitch": "110.006 Hz",
+                "Mean pitch": "118.055 Hz",
+                "Standard deviation": "25.372 Hz",
+                "Minimum pitch": "77.217 Hz",
+                "Maximum pitch": "261.592 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "323",
+                "Number of periods": "309",
+                "Mean period": "8.522699E-3 seconds",
+                "Standard deviation of period": "1.736578E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "41.650%   (207 / 497)",
+                "Number of voice breaks": "11",
+                "Degree of voice breaks": "26.565%   (1.328228 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.266%",
+                "Jitter (local, absolute)": "193.133E-6 seconds",
+                "Jitter (rap)": "0.971%",
+                "Jitter (ppq5)": "1.003%",
+                "Jitter (ddp)": "2.912%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.723%",
+                "Shimmer (local, dB)": "1.129 dB",
+                "Shimmer (apq3)": "4.761%",
+                "Shimmer (apq5)": "7.611%",
+                "Shimmer (apq11)": "11.463%",
+                "Shimmer (dda)": "14.284%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.815481",
+                "Mean noise-to-harmonics ratio": "0.277985",
+                "Mean harmonics-to-noise ratio": "8.394 dB"
+            }
+        }
+    },
+    {
+        "start_time": 50,
+        "end_time": 55,
+        "report": {
+            "Pitch": {
+                "Median pitch": "117.240 Hz",
+                "Mean pitch": "156.390 Hz",
+                "Standard deviation": "58.987 Hz",
+                "Minimum pitch": "83.099 Hz",
+                "Maximum pitch": "348.601 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "378",
+                "Number of periods": "369",
+                "Mean period": "6.341253E-3 seconds",
+                "Standard deviation of period": "2.329118E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "50.503%   (251 / 497)",
+                "Number of voice breaks": "6",
+                "Degree of voice breaks": "43.483%   (2.174162 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.562%",
+                "Jitter (local, absolute)": "99.043E-6 seconds",
+                "Jitter (rap)": "0.701%",
+                "Jitter (ppq5)": "0.837%",
+                "Jitter (ddp)": "2.103%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "10.565%",
+                "Shimmer (local, dB)": "1.104 dB",
+                "Shimmer (apq3)": "3.498%",
+                "Shimmer (apq5)": "6.443%",
+                "Shimmer (apq11)": "13.600%",
+                "Shimmer (dda)": "10.494%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.879685",
+                "Mean noise-to-harmonics ratio": "0.167772",
+                "Mean harmonics-to-noise ratio": "11.149 dB"
+            }
+        }
+    },
+    {
+        "start_time": 55,
+        "end_time": 60,
+        "report": {
+            "Pitch": {
+                "Median pitch": "211.672 Hz",
+                "Mean pitch": "257.709 Hz",
+                "Standard deviation": "99.477 Hz",
+                "Minimum pitch": "90.445 Hz",
+                "Maximum pitch": "498.068 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "644",
+                "Number of periods": "627",
+                "Mean period": "3.918119E-3 seconds",
+                "Standard deviation of period": "1.445475E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "43.863%   (218 / 497)",
+                "Number of voice breaks": "13",
+                "Degree of voice breaks": "35.555%   (1.777725 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.513%",
+                "Jitter (local, absolute)": "98.470E-6 seconds",
+                "Jitter (rap)": "1.175%",
+                "Jitter (ppq5)": "1.525%",
+                "Jitter (ddp)": "3.526%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.783%",
+                "Shimmer (local, dB)": "1.247 dB",
+                "Shimmer (apq3)": "5.351%",
+                "Shimmer (apq5)": "7.967%",
+                "Shimmer (apq11)": "15.375%",
+                "Shimmer (dda)": "16.052%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.830149",
+                "Mean noise-to-harmonics ratio": "0.250762",
+                "Mean harmonics-to-noise ratio": "8.426 dB"
+            }
+        }
+    },
+    {
+        "start_time": 60,
+        "end_time": 65,
+        "report": {
+            "Pitch": {
+                "Median pitch": "245.470 Hz",
+                "Mean pitch": "246.552 Hz",
+                "Standard deviation": "59.117 Hz",
+                "Minimum pitch": "157.211 Hz",
+                "Maximum pitch": "516.701 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "700",
+                "Number of periods": "681",
+                "Mean period": "4.074250E-3 seconds",
+                "Standard deviation of period": "0.863385E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "37.022%   (184 / 497)",
+                "Number of voice breaks": "13",
+                "Degree of voice breaks": "37.470%   (1.873515 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.036%",
+                "Jitter (local, absolute)": "82.931E-6 seconds",
+                "Jitter (rap)": "0.897%",
+                "Jitter (ppq5)": "1.029%",
+                "Jitter (ddp)": "2.690%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "9.290%",
+                "Shimmer (local, dB)": "1.009 dB",
+                "Shimmer (apq3)": "3.453%",
+                "Shimmer (apq5)": "5.510%",
+                "Shimmer (apq11)": "11.165%",
+                "Shimmer (dda)": "10.359%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.863695",
+                "Mean noise-to-harmonics ratio": "0.211179",
+                "Mean harmonics-to-noise ratio": "10.758 dB"
+            }
+        }
+    },
+    {
+        "start_time": 65,
+        "end_time": 70,
+        "report": {
+            "Pitch": {
+                "Median pitch": "192.075 Hz",
+                "Mean pitch": "195.947 Hz",
+                "Standard deviation": "58.969 Hz",
+                "Minimum pitch": "82.510 Hz",
+                "Maximum pitch": "481.272 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "544",
+                "Number of periods": "525",
+                "Mean period": "5.102759E-3 seconds",
+                "Standard deviation of period": "1.555254E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "40.443%   (201 / 497)",
+                "Number of voice breaks": "15",
+                "Degree of voice breaks": "44.466%   (2.223278 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.481%",
+                "Jitter (local, absolute)": "126.619E-6 seconds",
+                "Jitter (rap)": "1.097%",
+                "Jitter (ppq5)": "1.227%",
+                "Jitter (ddp)": "3.291%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "10.949%",
+                "Shimmer (local, dB)": "1.085 dB",
+                "Shimmer (apq3)": "4.327%",
+                "Shimmer (apq5)": "6.284%",
+                "Shimmer (apq11)": "10.940%",
+                "Shimmer (dda)": "12.982%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.854973",
+                "Mean noise-to-harmonics ratio": "0.218563",
+                "Mean harmonics-to-noise ratio": "10.579 dB"
+            }
+        }
+    },
+    {
+        "start_time": 70,
+        "end_time": 75,
+        "report": {
+            "Pitch": {
+                "Median pitch": "206.477 Hz",
+                "Mean pitch": "211.548 Hz",
+                "Standard deviation": "27.868 Hz",
+                "Minimum pitch": "78.011 Hz",
+                "Maximum pitch": "276.483 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "691",
+                "Number of periods": "672",
+                "Mean period": "4.701860E-3 seconds",
+                "Standard deviation of period": "0.574668E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "29.577%   (147 / 497)",
+                "Number of voice breaks": "15",
+                "Degree of voice breaks": "34.282%   (1.714094 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.738%",
+                "Jitter (local, absolute)": "81.722E-6 seconds",
+                "Jitter (rap)": "0.866%",
+                "Jitter (ppq5)": "0.962%",
+                "Jitter (ddp)": "2.598%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "9.412%",
+                "Shimmer (local, dB)": "0.982 dB",
+                "Shimmer (apq3)": "3.459%",
+                "Shimmer (apq5)": "5.254%",
+                "Shimmer (apq11)": "9.147%",
+                "Shimmer (dda)": "10.376%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.900878",
+                "Mean noise-to-harmonics ratio": "0.136924",
+                "Mean harmonics-to-noise ratio": "13.146 dB"
+            }
+        }
+    },
+    {
+        "start_time": 75,
+        "end_time": 80,
+        "report": {
+            "Pitch": {
+                "Median pitch": "202.048 Hz",
+                "Mean pitch": "210.252 Hz",
+                "Standard deviation": "77.432 Hz",
+                "Minimum pitch": "81.186 Hz",
+                "Maximum pitch": "517.003 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "600",
+                "Number of periods": "572",
+                "Mean period": "4.892428E-3 seconds",
+                "Standard deviation of period": "1.549543E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "37.022%   (184 / 497)",
+                "Number of voice breaks": "15",
+                "Degree of voice breaks": "41.285%   (2.064254 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.359%",
+                "Jitter (local, absolute)": "115.435E-6 seconds",
+                "Jitter (rap)": "1.134%",
+                "Jitter (ppq5)": "1.198%",
+                "Jitter (ddp)": "3.402%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "7.898%",
+                "Shimmer (local, dB)": "0.857 dB",
+                "Shimmer (apq3)": "3.093%",
+                "Shimmer (apq5)": "4.690%",
+                "Shimmer (apq11)": "7.783%",
+                "Shimmer (dda)": "9.279%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.861778",
+                "Mean noise-to-harmonics ratio": "0.215537",
+                "Mean harmonics-to-noise ratio": "12.093 dB"
+            }
+        }
+    },
+    {
+        "start_time": 80,
+        "end_time": 85,
+        "report": {
+            "Pitch": {
+                "Median pitch": "216.021 Hz",
+                "Mean pitch": "228.739 Hz",
+                "Standard deviation": "57.945 Hz",
+                "Minimum pitch": "108.283 Hz",
+                "Maximum pitch": "417.388 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "433",
+                "Number of periods": "416",
+                "Mean period": "4.395726E-3 seconds",
+                "Standard deviation of period": "1.071536E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "60.563%   (301 / 497)",
+                "Number of voice breaks": "9",
+                "Degree of voice breaks": "41.279%   (2.063941 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.155%",
+                "Jitter (local, absolute)": "94.710E-6 seconds",
+                "Jitter (rap)": "0.911%",
+                "Jitter (ppq5)": "1.042%",
+                "Jitter (ddp)": "2.732%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "11.048%",
+                "Shimmer (local, dB)": "1.200 dB",
+                "Shimmer (apq3)": "4.041%",
+                "Shimmer (apq5)": "6.678%",
+                "Shimmer (apq11)": "12.292%",
+                "Shimmer (dda)": "12.122%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.830891",
+                "Mean noise-to-harmonics ratio": "0.256113",
+                "Mean harmonics-to-noise ratio": "9.130 dB"
+            }
+        }
+    },
+    {
+        "start_time": 85,
+        "end_time": 90,
+        "report": {
+            "Pitch": {
+                "Median pitch": "99.997 Hz",
+                "Mean pitch": "102.739 Hz",
+                "Standard deviation": "13.939 Hz",
+                "Minimum pitch": "75.717 Hz",
+                "Maximum pitch": "151.468 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "271",
+                "Number of periods": "251",
+                "Mean period": "9.804872E-3 seconds",
+                "Standard deviation of period": "1.372365E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "45.674%   (227 / 497)",
+                "Number of voice breaks": "18",
+                "Degree of voice breaks": "49.145%   (2.457257 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.575%",
+                "Jitter (local, absolute)": "252.498E-6 seconds",
+                "Jitter (rap)": "0.932%",
+                "Jitter (ppq5)": "1.225%",
+                "Jitter (ddp)": "2.795%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.027%",
+                "Shimmer (local, dB)": "1.079 dB",
+                "Shimmer (apq3)": "4.377%",
+                "Shimmer (apq5)": "6.497%",
+                "Shimmer (apq11)": "12.533%",
+                "Shimmer (dda)": "13.132%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.799563",
+                "Mean noise-to-harmonics ratio": "0.311922",
+                "Mean harmonics-to-noise ratio": "7.943 dB"
+            }
+        }
+    },
+    {
+        "start_time": 90,
+        "end_time": 95,
+        "report": {
+            "Pitch": {
+                "Median pitch": "112.756 Hz",
+                "Mean pitch": "127.280 Hz",
+                "Standard deviation": "42.106 Hz",
+                "Minimum pitch": "81.105 Hz",
+                "Maximum pitch": "314.074 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "382",
+                "Number of periods": "365",
+                "Mean period": "7.987359E-3 seconds",
+                "Standard deviation of period": "2.104096E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "37.425%   (186 / 497)",
+                "Number of voice breaks": "12",
+                "Degree of voice breaks": "23.709%   (1.185436 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "3.047%",
+                "Jitter (local, absolute)": "243.354E-6 seconds",
+                "Jitter (rap)": "1.454%",
+                "Jitter (ppq5)": "1.584%",
+                "Jitter (ddp)": "4.362%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "14.725%",
+                "Shimmer (local, dB)": "1.256 dB",
+                "Shimmer (apq3)": "5.779%",
+                "Shimmer (apq5)": "8.525%",
+                "Shimmer (apq11)": "16.906%",
+                "Shimmer (dda)": "17.337%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.835311",
+                "Mean noise-to-harmonics ratio": "0.256630",
+                "Mean harmonics-to-noise ratio": "9.606 dB"
+            }
+        }
+    },
+    {
+        "start_time": 95,
+        "end_time": 100,
+        "report": {
+            "Pitch": {
+                "Median pitch": "102.257 Hz",
+                "Mean pitch": "110.691 Hz",
+                "Standard deviation": "42.690 Hz",
+                "Minimum pitch": "78.428 Hz",
+                "Maximum pitch": "499.051 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "293",
+                "Number of periods": "277",
+                "Mean period": "9.161293E-3 seconds",
+                "Standard deviation of period": "1.926620E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "43.863%   (218 / 497)",
+                "Number of voice breaks": "14",
+                "Degree of voice breaks": "47.458%   (2.372915 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.581%",
+                "Jitter (local, absolute)": "236.419E-6 seconds",
+                "Jitter (rap)": "1.297%",
+                "Jitter (ppq5)": "1.355%",
+                "Jitter (ddp)": "3.891%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "15.073%",
+                "Shimmer (local, dB)": "1.250 dB",
+                "Shimmer (apq3)": "5.658%",
+                "Shimmer (apq5)": "9.187%",
+                "Shimmer (apq11)": "12.824%",
+                "Shimmer (dda)": "16.973%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.825972",
+                "Mean noise-to-harmonics ratio": "0.266377",
+                "Mean harmonics-to-noise ratio": "8.929 dB"
+            }
+        }
+    },
+    {
+        "start_time": 100,
+        "end_time": 105,
+        "report": {
+            "Pitch": {
+                "Median pitch": "104.627 Hz",
+                "Mean pitch": "117.792 Hz",
+                "Standard deviation": "48.505 Hz",
+                "Minimum pitch": "75.138 Hz",
+                "Maximum pitch": "498.480 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "367",
+                "Number of periods": "348",
+                "Mean period": "8.654055E-3 seconds",
+                "Standard deviation of period": "2.138902E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "34.406%   (171 / 497)",
+                "Number of voice breaks": "15",
+                "Degree of voice breaks": "38.856%   (1.942818 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.819%",
+                "Jitter (local, absolute)": "243.983E-6 seconds",
+                "Jitter (rap)": "1.289%",
+                "Jitter (ppq5)": "1.572%",
+                "Jitter (ddp)": "3.866%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "9.650%",
+                "Shimmer (local, dB)": "1.033 dB",
+                "Shimmer (apq3)": "3.773%",
+                "Shimmer (apq5)": "6.017%",
+                "Shimmer (apq11)": "8.098%",
+                "Shimmer (dda)": "11.320%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.863076",
+                "Mean noise-to-harmonics ratio": "0.201976",
+                "Mean harmonics-to-noise ratio": "11.296 dB"
+            }
+        }
+    },
+    {
+        "start_time": 105,
+        "end_time": 110,
+        "report": {
+            "Pitch": {
+                "Median pitch": "98.771 Hz",
+                "Mean pitch": "113.930 Hz",
+                "Standard deviation": "45.629 Hz",
+                "Minimum pitch": "74.814 Hz",
+                "Maximum pitch": "498.333 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "356",
+                "Number of periods": "337",
+                "Mean period": "8.937743E-3 seconds",
+                "Standard deviation of period": "2.314521E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "34.809%   (173 / 497)",
+                "Number of voice breaks": "12",
+                "Degree of voice breaks": "37.251%   (1.862549 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "3.224%",
+                "Jitter (local, absolute)": "288.178E-6 seconds",
+                "Jitter (rap)": "1.518%",
+                "Jitter (ppq5)": "1.581%",
+                "Jitter (ddp)": "4.553%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.222%",
+                "Shimmer (local, dB)": "1.242 dB",
+                "Shimmer (apq3)": "5.129%",
+                "Shimmer (apq5)": "8.039%",
+                "Shimmer (apq11)": "15.247%",
+                "Shimmer (dda)": "15.387%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.846048",
+                "Mean noise-to-harmonics ratio": "0.237950",
+                "Mean harmonics-to-noise ratio": "10.629 dB"
+            }
+        }
+    },
+    {
+        "start_time": 110,
+        "end_time": 115,
+        "report": {
+            "Pitch": {
+                "Median pitch": "103.278 Hz",
+                "Mean pitch": "163.492 Hz",
+                "Standard deviation": "105.102 Hz",
+                "Minimum pitch": "75.244 Hz",
+                "Maximum pitch": "433.723 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "388",
+                "Number of periods": "363",
+                "Mean period": "6.110189E-3 seconds",
+                "Standard deviation of period": "3.567098E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "45.070%   (224 / 497)",
+                "Number of voice breaks": "16",
+                "Degree of voice breaks": "53.254%   (2.662710 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "3.480%",
+                "Jitter (local, absolute)": "212.608E-6 seconds",
+                "Jitter (rap)": "1.706%",
+                "Jitter (ppq5)": "1.788%",
+                "Jitter (ddp)": "5.118%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "14.318%",
+                "Shimmer (local, dB)": "1.324 dB",
+                "Shimmer (apq3)": "5.714%",
+                "Shimmer (apq5)": "7.688%",
+                "Shimmer (apq11)": "10.831%",
+                "Shimmer (dda)": "17.141%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.772441",
+                "Mean noise-to-harmonics ratio": "0.376133",
+                "Mean harmonics-to-noise ratio": "7.022 dB"
+            }
+        }
+    },
+    {
+        "start_time": 115,
+        "end_time": 120,
+        "report": {
+            "Pitch": {
+                "Median pitch": "113.098 Hz",
+                "Mean pitch": "145.021 Hz",
+                "Standard deviation": "59.295 Hz",
+                "Minimum pitch": "90.323 Hz",
+                "Maximum pitch": "430.287 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "243",
+                "Number of periods": "234",
+                "Mean period": "7.000927E-3 seconds",
+                "Standard deviation of period": "2.370666E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "63.581%   (316 / 497)",
+                "Number of voice breaks": "7",
+                "Degree of voice breaks": "36.054%   (1.802721 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "3.110%",
+                "Jitter (local, absolute)": "217.709E-6 seconds",
+                "Jitter (rap)": "1.512%",
+                "Jitter (ppq5)": "1.666%",
+                "Jitter (ddp)": "4.535%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.072%",
+                "Shimmer (local, dB)": "1.370 dB",
+                "Shimmer (apq3)": "5.379%",
+                "Shimmer (apq5)": "5.969%",
+                "Shimmer (apq11)": "12.162%",
+                "Shimmer (dda)": "16.136%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.830125",
+                "Mean noise-to-harmonics ratio": "0.255330",
+                "Mean harmonics-to-noise ratio": "9.507 dB"
+            }
+        }
+    },
+    {
+        "start_time": 120,
+        "end_time": 125,
+        "report": {
+            "Pitch": {
+                "Median pitch": "112.384 Hz",
+                "Mean pitch": "147.730 Hz",
+                "Standard deviation": "57.098 Hz",
+                "Minimum pitch": "85.159 Hz",
+                "Maximum pitch": "290.604 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "441",
+                "Number of periods": "434",
+                "Mean period": "6.800148E-3 seconds",
+                "Standard deviation of period": "2.495441E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "36.217%   (180 / 497)",
+                "Number of voice breaks": "4",
+                "Degree of voice breaks": "38.864%   (1.943211 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.089%",
+                "Jitter (local, absolute)": "142.022E-6 seconds",
+                "Jitter (rap)": "0.954%",
+                "Jitter (ppq5)": "1.113%",
+                "Jitter (ddp)": "2.861%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.259%",
+                "Shimmer (local, dB)": "1.161 dB",
+                "Shimmer (apq3)": "5.862%",
+                "Shimmer (apq5)": "8.188%",
+                "Shimmer (apq11)": "10.595%",
+                "Shimmer (dda)": "17.587%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.866193",
+                "Mean noise-to-harmonics ratio": "0.190182",
+                "Mean harmonics-to-noise ratio": "10.888 dB"
+            }
+        }
+    },
+    {
+        "start_time": 125,
+        "end_time": 130,
+        "report": {
+            "Pitch": {
+                "Median pitch": "110.453 Hz",
+                "Mean pitch": "125.433 Hz",
+                "Standard deviation": "37.960 Hz",
+                "Minimum pitch": "93.279 Hz",
+                "Maximum pitch": "217.454 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "175",
+                "Number of periods": "168",
+                "Mean period": "7.931757E-3 seconds",
+                "Standard deviation of period": "2.110901E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "69.416%   (345 / 497)",
+                "Number of voice breaks": "6",
+                "Degree of voice breaks": "72.142%   (3.607114 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.759%",
+                "Jitter (local, absolute)": "139.545E-6 seconds",
+                "Jitter (rap)": "0.852%",
+                "Jitter (ppq5)": "0.948%",
+                "Jitter (ddp)": "2.556%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.362%",
+                "Shimmer (local, dB)": "1.081 dB",
+                "Shimmer (apq3)": "5.353%",
+                "Shimmer (apq5)": "8.745%",
+                "Shimmer (apq11)": "13.084%",
+                "Shimmer (dda)": "16.060%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.824942",
+                "Mean noise-to-harmonics ratio": "0.262755",
+                "Mean harmonics-to-noise ratio": "8.568 dB"
+            }
+        }
+    },
+    {
+        "start_time": 130,
+        "end_time": 135,
+        "report": {
+            "Pitch": {
+                "Median pitch": "148.757 Hz",
+                "Mean pitch": "173.133 Hz",
+                "Standard deviation": "81.797 Hz",
+                "Minimum pitch": "92.113 Hz",
+                "Maximum pitch": "418.638 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "459",
+                "Number of periods": "450",
+                "Mean period": "5.818408E-3 seconds",
+                "Standard deviation of period": "2.463959E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "44.668%   (222 / 497)",
+                "Number of voice breaks": "7",
+                "Degree of voice breaks": "47.116%   (2.355816 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.907%",
+                "Jitter (local, absolute)": "110.930E-6 seconds",
+                "Jitter (rap)": "0.734%",
+                "Jitter (ppq5)": "0.949%",
+                "Jitter (ddp)": "2.201%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "14.108%",
+                "Shimmer (local, dB)": "1.183 dB",
+                "Shimmer (apq3)": "5.627%",
+                "Shimmer (apq5)": "8.124%",
+                "Shimmer (apq11)": "15.269%",
+                "Shimmer (dda)": "16.882%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.873048",
+                "Mean noise-to-harmonics ratio": "0.177515",
+                "Mean harmonics-to-noise ratio": "10.921 dB"
+            }
+        }
+    },
+    {
+        "start_time": 135,
+        "end_time": 140,
+        "report": {
+            "Pitch": {
+                "Median pitch": "171.480 Hz",
+                "Mean pitch": "200.977 Hz",
+                "Standard deviation": "86.095 Hz",
+                "Minimum pitch": "69.833 Hz",
+                "Maximum pitch": "440.152 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "669",
+                "Number of periods": "643",
+                "Mean period": "4.989182E-3 seconds",
+                "Standard deviation of period": "2.189648E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "28.571%   (142 / 497)",
+                "Number of voice breaks": "13",
+                "Degree of voice breaks": "33.292%   (1.664579 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.956%",
+                "Jitter (local, absolute)": "147.456E-6 seconds",
+                "Jitter (rap)": "1.242%",
+                "Jitter (ppq5)": "1.413%",
+                "Jitter (ddp)": "3.725%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "15.593%",
+                "Shimmer (local, dB)": "1.360 dB",
+                "Shimmer (apq3)": "6.309%",
+                "Shimmer (apq5)": "9.564%",
+                "Shimmer (apq11)": "17.232%",
+                "Shimmer (dda)": "18.926%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.840236",
+                "Mean noise-to-harmonics ratio": "0.236330",
+                "Mean harmonics-to-noise ratio": "9.509 dB"
+            }
+        }
+    },
+    {
+        "start_time": 140,
+        "end_time": 145,
+        "report": {
+            "Pitch": {
+                "Median pitch": "221.555 Hz",
+                "Mean pitch": "223.054 Hz",
+                "Standard deviation": "65.873 Hz",
+                "Minimum pitch": "84.565 Hz",
+                "Maximum pitch": "488.618 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "559",
+                "Number of periods": "544",
+                "Mean period": "4.482453E-3 seconds",
+                "Standard deviation of period": "1.442316E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "46.680%   (232 / 497)",
+                "Number of voice breaks": "10",
+                "Degree of voice breaks": "42.285%   (2.114241 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.803%",
+                "Jitter (local, absolute)": "80.820E-6 seconds",
+                "Jitter (rap)": "0.786%",
+                "Jitter (ppq5)": "0.827%",
+                "Jitter (ddp)": "2.357%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "10.824%",
+                "Shimmer (local, dB)": "1.028 dB",
+                "Shimmer (apq3)": "4.348%",
+                "Shimmer (apq5)": "6.685%",
+                "Shimmer (apq11)": "11.682%",
+                "Shimmer (dda)": "13.044%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.876779",
+                "Mean noise-to-harmonics ratio": "0.177862",
+                "Mean harmonics-to-noise ratio": "10.652 dB"
+            }
+        }
+    },
+    {
+        "start_time": 145,
+        "end_time": 150,
+        "report": {
+            "Pitch": {
+                "Median pitch": "124.437 Hz",
+                "Mean pitch": "151.865 Hz",
+                "Standard deviation": "42.705 Hz",
+                "Minimum pitch": "80.398 Hz",
+                "Maximum pitch": "223.322 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "185",
+                "Number of periods": "178",
+                "Mean period": "6.541461E-3 seconds",
+                "Standard deviation of period": "1.901092E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "75.252%   (374 / 497)",
+                "Number of voice breaks": "3",
+                "Degree of voice breaks": "72.733%   (3.636666 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "3.339%",
+                "Jitter (local, absolute)": "218.437E-6 seconds",
+                "Jitter (rap)": "1.717%",
+                "Jitter (ppq5)": "1.987%",
+                "Jitter (ddp)": "5.152%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.887%",
+                "Shimmer (local, dB)": "1.144 dB",
+                "Shimmer (apq3)": "5.629%",
+                "Shimmer (apq5)": "5.858%",
+                "Shimmer (apq11)": "10.152%",
+                "Shimmer (dda)": "16.886%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.815030",
+                "Mean noise-to-harmonics ratio": "0.279054",
+                "Mean harmonics-to-noise ratio": "7.996 dB"
+            }
+        }
+    },
+    {
+        "start_time": 150,
+        "end_time": 155,
+        "report": {
+            "Pitch": {
+                "Median pitch": "126.962 Hz",
+                "Mean pitch": "135.205 Hz",
+                "Standard deviation": "34.364 Hz",
+                "Minimum pitch": "106.301 Hz",
+                "Maximum pitch": "283.539 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "447",
+                "Number of periods": "435",
+                "Mean period": "7.409377E-3 seconds",
+                "Standard deviation of period": "1.464345E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "30.584%   (152 / 497)",
+                "Number of voice breaks": "10",
+                "Degree of voice breaks": "29.569%   (1.478439 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.480%",
+                "Jitter (local, absolute)": "183.772E-6 seconds",
+                "Jitter (rap)": "1.248%",
+                "Jitter (ppq5)": "1.507%",
+                "Jitter (ddp)": "3.745%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.703%",
+                "Shimmer (local, dB)": "1.291 dB",
+                "Shimmer (apq3)": "5.652%",
+                "Shimmer (apq5)": "8.102%",
+                "Shimmer (apq11)": "15.371%",
+                "Shimmer (dda)": "16.956%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.858609",
+                "Mean noise-to-harmonics ratio": "0.216355",
+                "Mean harmonics-to-noise ratio": "10.836 dB"
+            }
+        }
+    },
+    {
+        "start_time": 155,
+        "end_time": 160,
+        "report": {
+            "Pitch": {
+                "Median pitch": "114.560 Hz",
+                "Mean pitch": "116.416 Hz",
+                "Standard deviation": "14.863 Hz",
+                "Minimum pitch": "97.971 Hz",
+                "Maximum pitch": "231.106 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "461",
+                "Number of periods": "452",
+                "Mean period": "8.592816E-3 seconds",
+                "Standard deviation of period": "0.920078E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "18.511%   (92 / 497)",
+                "Number of voice breaks": "7",
+                "Degree of voice breaks": "20.498%   (1.024905 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.539%",
+                "Jitter (local, absolute)": "132.275E-6 seconds",
+                "Jitter (rap)": "0.666%",
+                "Jitter (ppq5)": "0.915%",
+                "Jitter (ddp)": "1.999%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "10.604%",
+                "Shimmer (local, dB)": "1.033 dB",
+                "Shimmer (apq3)": "3.619%",
+                "Shimmer (apq5)": "6.618%",
+                "Shimmer (apq11)": "13.539%",
+                "Shimmer (dda)": "10.857%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.903561",
+                "Mean noise-to-harmonics ratio": "0.133650",
+                "Mean harmonics-to-noise ratio": "13.826 dB"
+            }
+        }
+    },
+    {
+        "start_time": 160,
+        "end_time": 165,
+        "report": {
+            "Pitch": {
+                "Median pitch": "110.823 Hz",
+                "Mean pitch": "130.944 Hz",
+                "Standard deviation": "55.530 Hz",
+                "Minimum pitch": "78.857 Hz",
+                "Maximum pitch": "336.602 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "404",
+                "Number of periods": "392",
+                "Mean period": "7.680006E-3 seconds",
+                "Standard deviation of period": "2.530717E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "37.827%   (188 / 497)",
+                "Number of voice breaks": "11",
+                "Degree of voice breaks": "38.855%   (1.942732 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.275%",
+                "Jitter (local, absolute)": "174.755E-6 seconds",
+                "Jitter (rap)": "0.969%",
+                "Jitter (ppq5)": "1.121%",
+                "Jitter (ddp)": "2.907%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.692%",
+                "Shimmer (local, dB)": "1.244 dB",
+                "Shimmer (apq3)": "5.207%",
+                "Shimmer (apq5)": "8.671%",
+                "Shimmer (apq11)": "12.108%",
+                "Shimmer (dda)": "15.621%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.864944",
+                "Mean noise-to-harmonics ratio": "0.202665",
+                "Mean harmonics-to-noise ratio": "10.699 dB"
+            }
+        }
+    },
+    {
+        "start_time": 165,
+        "end_time": 170,
+        "report": {
+            "Pitch": {
+                "Median pitch": "109.501 Hz",
+                "Mean pitch": "167.385 Hz",
+                "Standard deviation": "107.077 Hz",
+                "Minimum pitch": "65.736 Hz",
+                "Maximum pitch": "499.635 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "420",
+                "Number of periods": "396",
+                "Mean period": "6.065036E-3 seconds",
+                "Standard deviation of period": "3.240724E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "43.461%   (216 / 497)",
+                "Number of voice breaks": "14",
+                "Degree of voice breaks": "46.265%   (2.313247 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "3.236%",
+                "Jitter (local, absolute)": "196.251E-6 seconds",
+                "Jitter (rap)": "1.497%",
+                "Jitter (ppq5)": "1.510%",
+                "Jitter (ddp)": "4.491%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "15.589%",
+                "Shimmer (local, dB)": "1.417 dB",
+                "Shimmer (apq3)": "7.695%",
+                "Shimmer (apq5)": "10.481%",
+                "Shimmer (apq11)": "16.712%",
+                "Shimmer (dda)": "23.085%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.778689",
+                "Mean noise-to-harmonics ratio": "0.345130",
+                "Mean harmonics-to-noise ratio": "6.710 dB"
+            }
+        }
+    },
+    {
+        "start_time": 170,
+        "end_time": 175,
+        "report": {
+            "Pitch": {
+                "Median pitch": "223.022 Hz",
+                "Mean pitch": "232.951 Hz",
+                "Standard deviation": "110.777 Hz",
+                "Minimum pitch": "83.539 Hz",
+                "Maximum pitch": "498.779 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "675",
+                "Number of periods": "650",
+                "Mean period": "4.362312E-3 seconds",
+                "Standard deviation of period": "2.188687E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "39.839%   (198 / 497)",
+                "Number of voice breaks": "11",
+                "Degree of voice breaks": "41.285%   (2.064270 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "3.231%",
+                "Jitter (local, absolute)": "140.930E-6 seconds",
+                "Jitter (rap)": "1.655%",
+                "Jitter (ppq5)": "2.145%",
+                "Jitter (ddp)": "4.966%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "15.298%",
+                "Shimmer (local, dB)": "1.424 dB",
+                "Shimmer (apq3)": "6.428%",
+                "Shimmer (apq5)": "10.313%",
+                "Shimmer (apq11)": "24.676%",
+                "Shimmer (dda)": "19.284%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.798092",
+                "Mean noise-to-harmonics ratio": "0.318269",
+                "Mean harmonics-to-noise ratio": "7.584 dB"
+            }
+        }
+    },
+    {
+        "start_time": 175,
+        "end_time": 180,
+        "report": {
+            "Pitch": {
+                "Median pitch": "121.642 Hz",
+                "Mean pitch": "135.634 Hz",
+                "Standard deviation": "38.274 Hz",
+                "Minimum pitch": "71.830 Hz",
+                "Maximum pitch": "299.447 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "519",
+                "Number of periods": "502",
+                "Mean period": "7.358016E-3 seconds",
+                "Standard deviation of period": "1.668431E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "20.322%   (101 / 497)",
+                "Number of voice breaks": "15",
+                "Degree of voice breaks": "25.489%   (1.274447 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.079%",
+                "Jitter (local, absolute)": "152.992E-6 seconds",
+                "Jitter (rap)": "0.969%",
+                "Jitter (ppq5)": "1.116%",
+                "Jitter (ddp)": "2.907%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "11.896%",
+                "Shimmer (local, dB)": "1.111 dB",
+                "Shimmer (apq3)": "4.441%",
+                "Shimmer (apq5)": "6.913%",
+                "Shimmer (apq11)": "13.430%",
+                "Shimmer (dda)": "13.322%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.888640",
+                "Mean noise-to-harmonics ratio": "0.159426",
+                "Mean harmonics-to-noise ratio": "12.777 dB"
+            }
+        }
+    },
+    {
+        "start_time": 180,
+        "end_time": 185,
+        "report": {
+            "Pitch": {
+                "Median pitch": "134.180 Hz",
+                "Mean pitch": "167.037 Hz",
+                "Standard deviation": "63.150 Hz",
+                "Minimum pitch": "84.940 Hz",
+                "Maximum pitch": "404.022 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "477",
+                "Number of periods": "459",
+                "Mean period": "6.016242E-3 seconds",
+                "Standard deviation of period": "2.187235E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "39.034%   (194 / 497)",
+                "Number of voice breaks": "15",
+                "Degree of voice breaks": "44.101%   (2.205063 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.318%",
+                "Jitter (local, absolute)": "139.438E-6 seconds",
+                "Jitter (rap)": "1.094%",
+                "Jitter (ppq5)": "1.206%",
+                "Jitter (ddp)": "3.282%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.643%",
+                "Shimmer (local, dB)": "1.198 dB",
+                "Shimmer (apq3)": "5.148%",
+                "Shimmer (apq5)": "7.584%",
+                "Shimmer (apq11)": "12.845%",
+                "Shimmer (dda)": "15.445%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.814002",
+                "Mean noise-to-harmonics ratio": "0.278671",
+                "Mean harmonics-to-noise ratio": "8.228 dB"
+            }
+        }
+    },
+    {
+        "start_time": 185,
+        "end_time": 190,
+        "report": {
+            "Pitch": {
+                "Median pitch": "217.521 Hz",
+                "Mean pitch": "210.794 Hz",
+                "Standard deviation": "40.587 Hz",
+                "Minimum pitch": "109.234 Hz",
+                "Maximum pitch": "296.805 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "668",
+                "Number of periods": "653",
+                "Mean period": "4.753118E-3 seconds",
+                "Standard deviation of period": "1.052941E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "34.406%   (171 / 497)",
+                "Number of voice breaks": "12",
+                "Degree of voice breaks": "32.540%   (1.627021 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.678%",
+                "Jitter (local, absolute)": "79.753E-6 seconds",
+                "Jitter (rap)": "0.802%",
+                "Jitter (ppq5)": "0.989%",
+                "Jitter (ddp)": "2.405%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.438%",
+                "Shimmer (local, dB)": "1.195 dB",
+                "Shimmer (apq3)": "5.814%",
+                "Shimmer (apq5)": "8.271%",
+                "Shimmer (apq11)": "13.151%",
+                "Shimmer (dda)": "17.442%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.836914",
+                "Mean noise-to-harmonics ratio": "0.230999",
+                "Mean harmonics-to-noise ratio": "8.459 dB"
+            }
+        }
+    },
+    {
+        "start_time": 190,
+        "end_time": 195,
+        "report": {
+            "Pitch": {
+                "Median pitch": "121.596 Hz",
+                "Mean pitch": "136.746 Hz",
+                "Standard deviation": "39.083 Hz",
+                "Minimum pitch": "96.553 Hz",
+                "Maximum pitch": "276.406 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "317",
+                "Number of periods": "305",
+                "Mean period": "7.348291E-3 seconds",
+                "Standard deviation of period": "1.796797E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "49.698%   (247 / 497)",
+                "Number of voice breaks": "11",
+                "Degree of voice breaks": "42.523%   (2.126128 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.237%",
+                "Jitter (local, absolute)": "164.396E-6 seconds",
+                "Jitter (rap)": "0.971%",
+                "Jitter (ppq5)": "1.079%",
+                "Jitter (ddp)": "2.912%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.820%",
+                "Shimmer (local, dB)": "1.230 dB",
+                "Shimmer (apq3)": "4.750%",
+                "Shimmer (apq5)": "6.843%",
+                "Shimmer (apq11)": "11.298%",
+                "Shimmer (dda)": "14.251%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.825290",
+                "Mean noise-to-harmonics ratio": "0.249685",
+                "Mean harmonics-to-noise ratio": "8.083 dB"
+            }
+        }
+    },
+    {
+        "start_time": 195,
+        "end_time": 200,
+        "report": {
+            "Pitch": {
+                "Median pitch": "146.658 Hz",
+                "Mean pitch": "169.904 Hz",
+                "Standard deviation": "63.164 Hz",
+                "Minimum pitch": "78.937 Hz",
+                "Maximum pitch": "371.554 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "559",
+                "Number of periods": "542",
+                "Mean period": "5.933336E-3 seconds",
+                "Standard deviation of period": "1.882412E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "31.590%   (157 / 497)",
+                "Number of voice breaks": "12",
+                "Degree of voice breaks": "31.249%   (1.562432 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.798%",
+                "Jitter (local, absolute)": "106.699E-6 seconds",
+                "Jitter (rap)": "0.749%",
+                "Jitter (ppq5)": "0.919%",
+                "Jitter (ddp)": "2.248%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.259%",
+                "Shimmer (local, dB)": "1.234 dB",
+                "Shimmer (apq3)": "5.501%",
+                "Shimmer (apq5)": "7.677%",
+                "Shimmer (apq11)": "12.301%",
+                "Shimmer (dda)": "16.503%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.865559",
+                "Mean noise-to-harmonics ratio": "0.192325",
+                "Mean harmonics-to-noise ratio": "10.244 dB"
+            }
+        }
+    },
+    {
+        "start_time": 200,
+        "end_time": 205,
+        "report": {
+            "Pitch": {
+                "Median pitch": "116.428 Hz",
+                "Mean pitch": "125.047 Hz",
+                "Standard deviation": "32.436 Hz",
+                "Minimum pitch": "79.640 Hz",
+                "Maximum pitch": "250.494 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "322",
+                "Number of periods": "311",
+                "Mean period": "7.972979E-3 seconds",
+                "Standard deviation of period": "1.758162E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "45.272%   (225 / 497)",
+                "Number of voice breaks": "9",
+                "Degree of voice breaks": "32.951%   (1.647573 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.232%",
+                "Jitter (local, absolute)": "177.961E-6 seconds",
+                "Jitter (rap)": "1.198%",
+                "Jitter (ppq5)": "1.399%",
+                "Jitter (ddp)": "3.594%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.831%",
+                "Shimmer (local, dB)": "1.257 dB",
+                "Shimmer (apq3)": "5.340%",
+                "Shimmer (apq5)": "7.870%",
+                "Shimmer (apq11)": "13.743%",
+                "Shimmer (dda)": "16.021%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.845934",
+                "Mean noise-to-harmonics ratio": "0.226430",
+                "Mean harmonics-to-noise ratio": "9.578 dB"
+            }
+        }
+    },
+    {
+        "start_time": 205,
+        "end_time": 210,
+        "report": {
+            "Pitch": {
+                "Median pitch": "123.854 Hz",
+                "Mean pitch": "134.030 Hz",
+                "Standard deviation": "31.180 Hz",
+                "Minimum pitch": "98.960 Hz",
+                "Maximum pitch": "299.500 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "540",
+                "Number of periods": "526",
+                "Mean period": "7.480543E-3 seconds",
+                "Standard deviation of period": "1.450893E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "16.700%   (83 / 497)",
+                "Number of voice breaks": "8",
+                "Degree of voice breaks": "19.778%   (0.988922 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.580%",
+                "Jitter (local, absolute)": "118.163E-6 seconds",
+                "Jitter (rap)": "0.643%",
+                "Jitter (ppq5)": "0.893%",
+                "Jitter (ddp)": "1.930%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.647%",
+                "Shimmer (local, dB)": "1.208 dB",
+                "Shimmer (apq3)": "4.703%",
+                "Shimmer (apq5)": "7.364%",
+                "Shimmer (apq11)": "13.939%",
+                "Shimmer (dda)": "14.108%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.853511",
+                "Mean noise-to-harmonics ratio": "0.209618",
+                "Mean harmonics-to-noise ratio": "10.055 dB"
+            }
+        }
+    },
+    {
+        "start_time": 210,
+        "end_time": 215,
+        "report": {
+            "Pitch": {
+                "Median pitch": "229.534 Hz",
+                "Mean pitch": "234.547 Hz",
+                "Standard deviation": "50.447 Hz",
+                "Minimum pitch": "129.163 Hz",
+                "Maximum pitch": "460.600 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "799",
+                "Number of periods": "780",
+                "Mean period": "4.271874E-3 seconds",
+                "Standard deviation of period": "0.890815E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "28.773%   (143 / 497)",
+                "Number of voice breaks": "10",
+                "Degree of voice breaks": "30.534%   (1.526689 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.396%",
+                "Jitter (local, absolute)": "102.364E-6 seconds",
+                "Jitter (rap)": "1.145%",
+                "Jitter (ppq5)": "1.315%",
+                "Jitter (ddp)": "3.434%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.264%",
+                "Shimmer (local, dB)": "1.238 dB",
+                "Shimmer (apq3)": "4.923%",
+                "Shimmer (apq5)": "6.624%",
+                "Shimmer (apq11)": "10.767%",
+                "Shimmer (dda)": "14.769%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.870889",
+                "Mean noise-to-harmonics ratio": "0.182513",
+                "Mean harmonics-to-noise ratio": "10.649 dB"
+            }
+        }
+    },
+    {
+        "start_time": 215,
+        "end_time": 220,
+        "report": {
+            "Pitch": {
+                "Median pitch": "299.198 Hz",
+                "Mean pitch": "278.442 Hz",
+                "Standard deviation": "98.045 Hz",
+                "Minimum pitch": "93.764 Hz",
+                "Maximum pitch": "492.195 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "990",
+                "Number of periods": "965",
+                "Mean period": "3.677818E-3 seconds",
+                "Standard deviation of period": "1.635847E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "25.352%   (126 / 497)",
+                "Number of voice breaks": "12",
+                "Degree of voice breaks": "24.171%   (1.208549 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.449%",
+                "Jitter (local, absolute)": "90.068E-6 seconds",
+                "Jitter (rap)": "1.163%",
+                "Jitter (ppq5)": "1.506%",
+                "Jitter (ddp)": "3.489%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.228%",
+                "Shimmer (local, dB)": "1.081 dB",
+                "Shimmer (apq3)": "4.779%",
+                "Shimmer (apq5)": "6.759%",
+                "Shimmer (apq11)": "11.284%",
+                "Shimmer (dda)": "14.338%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.850459",
+                "Mean noise-to-harmonics ratio": "0.227588",
+                "Mean harmonics-to-noise ratio": "11.104 dB"
+            }
+        }
+    },
+    {
+        "start_time": 220,
+        "end_time": 225,
+        "report": {
+            "Pitch": {
+                "Median pitch": "218.935 Hz",
+                "Mean pitch": "201.732 Hz",
+                "Standard deviation": "67.993 Hz",
+                "Minimum pitch": "96.536 Hz",
+                "Maximum pitch": "401.499 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "545",
+                "Number of periods": "530",
+                "Mean period": "4.963375E-3 seconds",
+                "Standard deviation of period": "1.931296E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "43.863%   (218 / 497)",
+                "Number of voice breaks": "10",
+                "Degree of voice breaks": "36.641%   (1.832072 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.482%",
+                "Jitter (local, absolute)": "123.180E-6 seconds",
+                "Jitter (rap)": "1.104%",
+                "Jitter (ppq5)": "1.314%",
+                "Jitter (ddp)": "3.311%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.162%",
+                "Shimmer (local, dB)": "1.195 dB",
+                "Shimmer (apq3)": "5.186%",
+                "Shimmer (apq5)": "6.534%",
+                "Shimmer (apq11)": "10.915%",
+                "Shimmer (dda)": "15.557%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.842864",
+                "Mean noise-to-harmonics ratio": "0.227704",
+                "Mean harmonics-to-noise ratio": "9.278 dB"
+            }
+        }
+    },
+    {
+        "start_time": 225,
+        "end_time": 230,
+        "report": {
+            "Pitch": {
+                "Median pitch": "115.104 Hz",
+                "Mean pitch": "115.672 Hz",
+                "Standard deviation": "8.087 Hz",
+                "Minimum pitch": "95.783 Hz",
+                "Maximum pitch": "138.137 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "318",
+                "Number of periods": "310",
+                "Mean period": "8.665952E-3 seconds",
+                "Standard deviation of period": "0.670549E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "40.644%   (202 / 497)",
+                "Number of voice breaks": "7",
+                "Degree of voice breaks": "44.198%   (2.209875 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.482%",
+                "Jitter (local, absolute)": "215.060E-6 seconds",
+                "Jitter (rap)": "1.136%",
+                "Jitter (ppq5)": "1.373%",
+                "Jitter (ddp)": "3.408%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "11.781%",
+                "Shimmer (local, dB)": "1.194 dB",
+                "Shimmer (apq3)": "4.217%",
+                "Shimmer (apq5)": "7.243%",
+                "Shimmer (apq11)": "17.101%",
+                "Shimmer (dda)": "12.650%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.857678",
+                "Mean noise-to-harmonics ratio": "0.203081",
+                "Mean harmonics-to-noise ratio": "10.400 dB"
+            }
+        }
+    },
+    {
+        "start_time": 230,
+        "end_time": 235,
+        "report": {
+            "Pitch": {
+                "Median pitch": "250.146 Hz",
+                "Mean pitch": "218.133 Hz",
+                "Standard deviation": "77.549 Hz",
+                "Minimum pitch": "94.351 Hz",
+                "Maximum pitch": "488.092 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "683",
+                "Number of periods": "667",
+                "Mean period": "4.622516E-3 seconds",
+                "Standard deviation of period": "1.925840E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "35.815%   (178 / 497)",
+                "Number of voice breaks": "10",
+                "Degree of voice breaks": "24.435%   (1.221743 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.177%",
+                "Jitter (local, absolute)": "100.610E-6 seconds",
+                "Jitter (rap)": "0.965%",
+                "Jitter (ppq5)": "1.170%",
+                "Jitter (ddp)": "2.895%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.430%",
+                "Shimmer (local, dB)": "1.173 dB",
+                "Shimmer (apq3)": "4.513%",
+                "Shimmer (apq5)": "7.232%",
+                "Shimmer (apq11)": "14.461%",
+                "Shimmer (dda)": "13.539%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.856692",
+                "Mean noise-to-harmonics ratio": "0.207055",
+                "Mean harmonics-to-noise ratio": "10.076 dB"
+            }
+        }
+    },
+    {
+        "start_time": 235,
+        "end_time": 240,
+        "report": {
+            "Pitch": {
+                "Median pitch": "155.925 Hz",
+                "Mean pitch": "195.523 Hz",
+                "Standard deviation": "91.517 Hz",
+                "Minimum pitch": "71.355 Hz",
+                "Maximum pitch": "476.291 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "724",
+                "Number of periods": "691",
+                "Mean period": "5.189863E-3 seconds",
+                "Standard deviation of period": "2.197300E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "22.133%   (110 / 497)",
+                "Number of voice breaks": "12",
+                "Degree of voice breaks": "25.179%   (1.258928 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.333%",
+                "Jitter (local, absolute)": "121.080E-6 seconds",
+                "Jitter (rap)": "0.968%",
+                "Jitter (ppq5)": "1.121%",
+                "Jitter (ddp)": "2.904%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.696%",
+                "Shimmer (local, dB)": "1.320 dB",
+                "Shimmer (apq3)": "5.844%",
+                "Shimmer (apq5)": "7.818%",
+                "Shimmer (apq11)": "13.316%",
+                "Shimmer (dda)": "17.531%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.818196",
+                "Mean noise-to-harmonics ratio": "0.279940",
+                "Mean harmonics-to-noise ratio": "8.653 dB"
+            }
+        }
+    },
+    {
+        "start_time": 240,
+        "end_time": 245,
+        "report": {
+            "Pitch": {
+                "Median pitch": "119.424 Hz",
+                "Mean pitch": "172.132 Hz",
+                "Standard deviation": "97.877 Hz",
+                "Minimum pitch": "85.853 Hz",
+                "Maximum pitch": "482.404 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "428",
+                "Number of periods": "409",
+                "Mean period": "5.911293E-3 seconds",
+                "Standard deviation of period": "2.911683E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "46.881%   (233 / 497)",
+                "Number of voice breaks": "13",
+                "Degree of voice breaks": "50.244%   (2.512204 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.491%",
+                "Jitter (local, absolute)": "147.249E-6 seconds",
+                "Jitter (rap)": "0.899%",
+                "Jitter (ppq5)": "1.106%",
+                "Jitter (ddp)": "2.697%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "14.925%",
+                "Shimmer (local, dB)": "1.371 dB",
+                "Shimmer (apq3)": "5.874%",
+                "Shimmer (apq5)": "9.037%",
+                "Shimmer (apq11)": "13.526%",
+                "Shimmer (dda)": "17.623%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.805338",
+                "Mean noise-to-harmonics ratio": "0.290419",
+                "Mean harmonics-to-noise ratio": "7.686 dB"
+            }
+        }
+    },
+    {
+        "start_time": 245,
+        "end_time": 250,
+        "report": {
+            "Pitch": {
+                "Median pitch": "108.144 Hz",
+                "Mean pitch": "113.302 Hz",
+                "Standard deviation": "18.557 Hz",
+                "Minimum pitch": "77.285 Hz",
+                "Maximum pitch": "182.428 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "296",
+                "Number of periods": "283",
+                "Mean period": "8.836003E-3 seconds",
+                "Standard deviation of period": "1.328064E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "46.881%   (233 / 497)",
+                "Number of voice breaks": "12",
+                "Degree of voice breaks": "49.562%   (2.478107 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.302%",
+                "Jitter (local, absolute)": "203.440E-6 seconds",
+                "Jitter (rap)": "0.924%",
+                "Jitter (ppq5)": "1.284%",
+                "Jitter (ddp)": "2.773%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.653%",
+                "Shimmer (local, dB)": "1.133 dB",
+                "Shimmer (apq3)": "5.144%",
+                "Shimmer (apq5)": "7.791%",
+                "Shimmer (apq11)": "12.198%",
+                "Shimmer (dda)": "15.432%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.808659",
+                "Mean noise-to-harmonics ratio": "0.295287",
+                "Mean harmonics-to-noise ratio": "8.337 dB"
+            }
+        }
+    },
+    {
+        "start_time": 250,
+        "end_time": 255,
+        "report": {
+            "Pitch": {
+                "Median pitch": "104.014 Hz",
+                "Mean pitch": "106.790 Hz",
+                "Standard deviation": "18.355 Hz",
+                "Minimum pitch": "76.467 Hz",
+                "Maximum pitch": "186.502 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "168",
+                "Number of periods": "158",
+                "Mean period": "9.367609E-3 seconds",
+                "Standard deviation of period": "1.353852E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "65.795%   (327 / 497)",
+                "Number of voice breaks": "9",
+                "Degree of voice breaks": "63.293%   (3.164640 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "1.806%",
+                "Jitter (local, absolute)": "169.203E-6 seconds",
+                "Jitter (rap)": "0.884%",
+                "Jitter (ppq5)": "1.163%",
+                "Jitter (ddp)": "2.652%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "10.569%",
+                "Shimmer (local, dB)": "1.039 dB",
+                "Shimmer (apq3)": "3.965%",
+                "Shimmer (apq5)": "6.655%",
+                "Shimmer (apq11)": "12.276%",
+                "Shimmer (dda)": "11.896%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.838861",
+                "Mean noise-to-harmonics ratio": "0.222464",
+                "Mean harmonics-to-noise ratio": "9.185 dB"
+            }
+        }
+    },
+    {
+        "start_time": 255,
+        "end_time": 260,
+        "report": {
+            "Pitch": {
+                "Median pitch": "116.760 Hz",
+                "Mean pitch": "121.754 Hz",
+                "Standard deviation": "24.643 Hz",
+                "Minimum pitch": "75.828 Hz",
+                "Maximum pitch": "225.324 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "391",
+                "Number of periods": "376",
+                "Mean period": "8.220590E-3 seconds",
+                "Standard deviation of period": "1.513530E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "32.797%   (163 / 497)",
+                "Number of voice breaks": "14",
+                "Degree of voice breaks": "36.396%   (1.819798 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.409%",
+                "Jitter (local, absolute)": "198.045E-6 seconds",
+                "Jitter (rap)": "1.025%",
+                "Jitter (ppq5)": "1.255%",
+                "Jitter (ddp)": "3.076%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "12.406%",
+                "Shimmer (local, dB)": "1.152 dB",
+                "Shimmer (apq3)": "4.646%",
+                "Shimmer (apq5)": "6.460%",
+                "Shimmer (apq11)": "12.225%",
+                "Shimmer (dda)": "13.939%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.851441",
+                "Mean noise-to-harmonics ratio": "0.222681",
+                "Mean harmonics-to-noise ratio": "10.807 dB"
+            }
+        }
+    },
+    {
+        "start_time": 260,
+        "end_time": 265,
+        "report": {
+            "Pitch": {
+                "Median pitch": "122.360 Hz",
+                "Mean pitch": "159.372 Hz",
+                "Standard deviation": "91.942 Hz",
+                "Minimum pitch": "75.368 Hz",
+                "Maximum pitch": "527.064 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "472",
+                "Number of periods": "458",
+                "Mean period": "6.322978E-3 seconds",
+                "Standard deviation of period": "2.884441E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "37.626%   (187 / 497)",
+                "Number of voice breaks": "9",
+                "Degree of voice breaks": "35.269%   (1.763454 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.637%",
+                "Jitter (local, absolute)": "166.746E-6 seconds",
+                "Jitter (rap)": "1.181%",
+                "Jitter (ppq5)": "1.333%",
+                "Jitter (ddp)": "3.544%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "14.524%",
+                "Shimmer (local, dB)": "1.254 dB",
+                "Shimmer (apq3)": "6.565%",
+                "Shimmer (apq5)": "8.787%",
+                "Shimmer (apq11)": "16.466%",
+                "Shimmer (dda)": "19.695%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.855670",
+                "Mean noise-to-harmonics ratio": "0.203612",
+                "Mean harmonics-to-noise ratio": "9.760 dB"
+            }
+        }
+    },
+    {
+        "start_time": 265,
+        "end_time": 270,
+        "report": {
+            "Pitch": {
+                "Median pitch": "245.229 Hz",
+                "Mean pitch": "233.235 Hz",
+                "Standard deviation": "94.570 Hz",
+                "Minimum pitch": "75.030 Hz",
+                "Maximum pitch": "522.668 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "289",
+                "Number of periods": "275",
+                "Mean period": "4.279820E-3 seconds",
+                "Standard deviation of period": "1.840078E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "71.026%   (353 / 497)",
+                "Number of voice breaks": "10",
+                "Degree of voice breaks": "31.861%   (1.593040 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "3.077%",
+                "Jitter (local, absolute)": "131.671E-6 seconds",
+                "Jitter (rap)": "1.323%",
+                "Jitter (ppq5)": "1.468%",
+                "Jitter (ddp)": "3.968%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "13.930%",
+                "Shimmer (local, dB)": "1.391 dB",
+                "Shimmer (apq3)": "5.472%",
+                "Shimmer (apq5)": "8.721%",
+                "Shimmer (apq11)": "17.254%",
+                "Shimmer (dda)": "16.416%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.770252",
+                "Mean noise-to-harmonics ratio": "0.358116",
+                "Mean harmonics-to-noise ratio": "6.489 dB"
+            }
+        }
+    },
+    {
+        "start_time": 270,
+        "end_time": 275,
+        "report": {
+            "Pitch": {
+                "Median pitch": "132.954 Hz",
+                "Mean pitch": "155.890 Hz",
+                "Standard deviation": "61.666 Hz",
+                "Minimum pitch": "95.271 Hz",
+                "Maximum pitch": "410.777 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "371",
+                "Number of periods": "351",
+                "Mean period": "6.483070E-3 seconds",
+                "Standard deviation of period": "2.145464E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "47.686%   (237 / 497)",
+                "Number of voice breaks": "10",
+                "Degree of voice breaks": "50.373%   (2.518674 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "4.237%",
+                "Jitter (local, absolute)": "274.695E-6 seconds",
+                "Jitter (rap)": "2.167%",
+                "Jitter (ppq5)": "2.169%",
+                "Jitter (ddp)": "6.500%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "16.025%",
+                "Shimmer (local, dB)": "1.443 dB",
+                "Shimmer (apq3)": "6.418%",
+                "Shimmer (apq5)": "8.138%",
+                "Shimmer (apq11)": "11.179%",
+                "Shimmer (dda)": "19.253%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.758400",
+                "Mean noise-to-harmonics ratio": "0.384490",
+                "Mean harmonics-to-noise ratio": "6.214 dB"
+            }
+        }
+    },
+    {
+        "start_time": 275,
+        "end_time": 280,
+        "report": {
+            "Pitch": {
+                "Median pitch": "114.807 Hz",
+                "Mean pitch": "148.009 Hz",
+                "Standard deviation": "63.992 Hz",
+                "Minimum pitch": "78.457 Hz",
+                "Maximum pitch": "461.524 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "426",
+                "Number of periods": "411",
+                "Mean period": "6.759016E-3 seconds",
+                "Standard deviation of period": "2.615554E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "39.839%   (198 / 497)",
+                "Number of voice breaks": "13",
+                "Degree of voice breaks": "33.580%   (1.679011 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.024%",
+                "Jitter (local, absolute)": "136.822E-6 seconds",
+                "Jitter (rap)": "0.968%",
+                "Jitter (ppq5)": "1.006%",
+                "Jitter (ddp)": "2.904%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "11.632%",
+                "Shimmer (local, dB)": "1.050 dB",
+                "Shimmer (apq3)": "4.137%",
+                "Shimmer (apq5)": "6.792%",
+                "Shimmer (apq11)": "10.541%",
+                "Shimmer (dda)": "12.410%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.848776",
+                "Mean noise-to-harmonics ratio": "0.220549",
+                "Mean harmonics-to-noise ratio": "9.647 dB"
+            }
+        }
+    },
+    {
+        "start_time": 280,
+        "end_time": 285,
+        "report": {
+            "Pitch": {
+                "Median pitch": "117.391 Hz",
+                "Mean pitch": "118.597 Hz",
+                "Standard deviation": "12.779 Hz",
+                "Minimum pitch": "76.565 Hz",
+                "Maximum pitch": "169.968 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "239",
+                "Number of periods": "227",
+                "Mean period": "8.394422E-3 seconds",
+                "Standard deviation of period": "0.793210E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "57.545%   (286 / 497)",
+                "Number of voice breaks": "9",
+                "Degree of voice breaks": "52.244%   (2.612176 seconds / 5.000000 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "2.035%",
+                "Jitter (local, absolute)": "170.842E-6 seconds",
+                "Jitter (rap)": "1.034%",
+                "Jitter (ppq5)": "1.088%",
+                "Jitter (ddp)": "3.102%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "15.258%",
+                "Shimmer (local, dB)": "1.374 dB",
+                "Shimmer (apq3)": "6.921%",
+                "Shimmer (apq5)": "8.107%",
+                "Shimmer (apq11)": "11.854%",
+                "Shimmer (dda)": "20.763%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.827110",
+                "Mean noise-to-harmonics ratio": "0.254289",
+                "Mean harmonics-to-noise ratio": "8.982 dB"
+            }
+        }
+    },
+    {
+        "start_time": 285,
+        "end_time": 286.34,
+        "report": {
+            "Pitch": {
+                "Median pitch": "114.626 Hz",
+                "Mean pitch": "115.336 Hz",
+                "Standard deviation": "2.221 Hz",
+                "Minimum pitch": "113.448 Hz",
+                "Maximum pitch": "121.964 Hz"
+            },
+            "Pulses": {
+                "Number of pulses": "34",
+                "Number of periods": "33",
+                "Mean period": "8.625563E-3 seconds",
+                "Standard deviation of period": "0.326609E-3 seconds"
+            },
+            "Voicing": {
+                "Fraction of locally unvoiced frames": "77.863%   (102 / 131)",
+                "Number of voice breaks": "0",
+                "Degree of voice breaks": "0   (0 seconds / 0 seconds)"
+            },
+            "Jitter": {
+                "Jitter (local)": "0.888%",
+                "Jitter (local, absolute)": "76.580E-6 seconds",
+                "Jitter (rap)": "0.328%",
+                "Jitter (ppq5)": "0.315%",
+                "Jitter (ddp)": "0.984%"
+            },
+            "Shimmer": {
+                "Shimmer (local)": "9.016%",
+                "Shimmer (local, dB)": "0.883 dB",
+                "Shimmer (apq3)": "2.932%",
+                "Shimmer (apq5)": "5.115%",
+                "Shimmer (apq11)": "11.905%",
+                "Shimmer (dda)": "8.795%"
+            },
+            "Harmonicity": {
+                "Mean autocorrelation": "0.895207",
+                "Mean noise-to-harmonics ratio": "0.127915",
+                "Mean harmonics-to-noise ratio": "10.355 dB"
+            }
+        }
+    }
+]
