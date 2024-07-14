@@ -252,7 +252,7 @@
                     score = 4;
                 }
             } else if (id === 'hnr_value') {
-                if (value < 10) {
+                if (value < 7) {
                     element.style.height = '25%';
                     element.style.backgroundColor = 'red';
                     score = 1;
@@ -372,11 +372,38 @@
         });
 
         document.getElementById('stopButton').addEventListener('click', function() {
-            if (intervalId) {
+            if (!recordingStopped) {
+                recordingStopped = true;
                 clearInterval(intervalId);
                 console.log('Analyse gestoppt');
+                stopRecording(); // Aufnahme stoppen
             }
         });
+
+        window.addEventListener('beforeunload', function(event) {
+            if (!recordingStopped) {
+                recordingStopped = true;
+                stopRecording(); // Aufnahme stoppen
+            }
+        });
+
+        // Funktion, um die Aufnahme zu stoppen
+        function stopRecording() {
+            fetch('/stop_recording', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({}),
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error('Stop recording request failed');
+                }
+                console.log('Recording stopped');
+            }).catch(error => {
+                console.error('Fehler beim Stoppen der Aufnahme:', error);
+            });
+        }
 
         // Initialer Aufruf, um sicherzustellen, dass die Daten beim Laden der Seite abgerufen werden
         intervalId = setInterval(() => {

@@ -44,7 +44,7 @@ def analyze_audio(audio_data, sample_rate):
     return mean_pitch, std_pitch, hnr, zcr
 
 def detect_gender(mean_pitch):
-    if mean_pitch > 165:
+    if mean_pitch > 175:
         return "female"
     else:
         return "male"

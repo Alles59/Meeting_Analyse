@@ -28,6 +28,7 @@ mic_stream = None
 stereo_stream = None
 recording = False
 stop_event = threading.Event()
+stopped = False
 
 def list_audio_devices():
     device_count = p.get_device_count()
@@ -35,9 +36,11 @@ def list_audio_devices():
         info = p.get_device_info_by_index(i)
         print(f"Device {i}: {info['name']}")
 
+
 def start_recording():
-    global mic_stream, stereo_stream, recording
+    global mic_stream, stereo_stream, recording, stopped
     recording = True
+    stopped = False
     
     mic_stream = p.open(format=FORMAT,
                         channels=CHANNELS,
@@ -55,8 +58,8 @@ def start_recording():
 
     frames = []
     while recording and not stop_event.is_set():
-        mic_data = mic_stream.read(CHUNK)
-        stereo_data = stereo_stream.read(CHUNK)
+        mic_data = mic_stream.read(CHUNK, exception_on_overflow=False)
+        stereo_data = stereo_stream.read(CHUNK, exception_on_overflow=False)
 
         # Convert byte data to numpy arrays
         mic_array = np.frombuffer(mic_data, dtype=np.int16)
@@ -64,9 +67,6 @@ def start_recording():
 
         # Combine the two audio sources
         combined_array = mic_array + stereo_array
-
-        # Normalize the combined array to prevent clipping
-        combined_array = normalize_audio(combined_array)
 
         # Convert combined array back to byte data
         combined_data = combined_array.tobytes()
@@ -79,16 +79,18 @@ def start_recording():
     stop_recording()
 
 def stop_recording():
-    global mic_stream, stereo_stream, recording
-    recording = False
-    if mic_stream:
-        mic_stream.stop_stream()
-        mic_stream.close()
-    if stereo_stream:
-        stereo_stream.stop_stream()
-        stereo_stream.close()
-    p.terminate()
-    stop_event.set()
+    global mic_stream, stereo_stream, recording, stopped
+    if not stopped:
+        recording = False
+        stopped = True
+        if mic_stream:
+            mic_stream.stop_stream()
+            mic_stream.close()
+        if stereo_stream:
+            stereo_stream.stop_stream()
+            stereo_stream.close()
+        p.terminate()
+        stop_event.set()
 
 def save_and_analyze(frames):
     # Save frames as WAV file
@@ -119,11 +121,6 @@ def save_and_analyze(frames):
         json.dump(analysis_data, f)
     
     print("Audio analysis complete, JSON updated.")
-
-def normalize_audio(audio_data):
-    max_val = np.iinfo(np.int16).max
-    audio_data = audio_data * (max_val / np.max(np.abs(audio_data)))
-    return audio_data.astype(np.int16)
 
 def calculate_pitch(sound):
     pitch = sound.to_pitch_ac(pitch_floor=50, max_number_of_candidates= 15, very_accurate = False, silence_threshold=0.09, voicing_threshold= 0.50, octave_cost= 0.055, octave_jump_cost = 0.35, voiced_unvoiced_cost = 0.14, pitch_ceiling=500)
@@ -163,7 +160,7 @@ def analyze_audio(audio_data, sample_rate):
     return mean_pitch, std_pitch, hnr, zcr
 
 def detect_gender(mean_pitch):
-    if mean_pitch > 165:
+    if mean_pitch > 180:
         return "female"
     else:
         return "male"
