@@ -1,10 +1,20 @@
-# oTree-may-overwrite-this-file
-# IF YOU MODIFY THIS FILE, remove this comment.
-# otherwise, oTree will automatically overwrite it.
-otree==5.4.0
-moviepy==1.0.3
-numpy==1.22.4
-praat-parselmouth==0.3.3
-pydub==0.25.1
-openai-whisper==20230314
-whisper-timestamped==0.0.1
+# Alles Requirements für die Nutzung der Otree Apps
+deepface
+flask
+flask-cors
+keyboard
+matplotlib
+moviepy
+mss
+numpy
+openai-whisper
+opencv-python
+openpyxl
+otree
+pandas
+praat-parselmouth
+pyaudio
+pydub
+whisper-timestamped
+
+
