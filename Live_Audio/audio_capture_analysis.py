@@ -20,7 +20,7 @@ RECORD_SECONDS = 5  # Save and analyze every 5 seconds
 p = pyaudio.PyAudio()
 
 # Indices of the desired devices
-mic_index = 2  # Set your microphone device index here
+mic_index = 2  # Set your microphone device index here (best to use extrenal mircophone)
 stereo_index = 1  # Set your stereo mix device index here
 
 # Streams
@@ -58,8 +58,8 @@ def start_recording():
 
     frames = []
     while recording and not stop_event.is_set():
-        mic_data = mic_stream.read(CHUNK, exception_on_overflow=False)
-        stereo_data = stereo_stream.read(CHUNK, exception_on_overflow=False)
+        mic_data = mic_stream.read(CHUNK)
+        stereo_data = stereo_stream.read(CHUNK)
 
         # Convert byte data to numpy arrays
         mic_array = np.frombuffer(mic_data, dtype=np.int16)
@@ -121,7 +121,7 @@ def save_and_analyze(frames):
         json.dump(analysis_data, f)
     
     print("Audio analysis complete, JSON updated.")
-
+# calculate pitch with autocorrelation
 def calculate_pitch(sound):
     pitch = sound.to_pitch_ac(pitch_floor=50, max_number_of_candidates= 15, very_accurate = False, silence_threshold=0.09, voicing_threshold= 0.50, octave_cost= 0.055, octave_jump_cost = 0.35, voiced_unvoiced_cost = 0.14, pitch_ceiling=500)
     pitch_values = pitch.selected_array['frequency']
@@ -138,13 +138,13 @@ def calculate_pitch(sound):
         std_pitch = 0
 
     return mean_pitch, std_pitch
-
+#calculate HNR with crosscorrelation
 def calculate_hnr(sound):
     harmonicity = sound.to_harmonicity_cc(time_step=0.01, minimum_pitch=75)
     hnr_values = harmonicity.values[harmonicity.values != -200]
     hnr = np.mean(hnr_values) if len(hnr_values) > 0 else 0
     return hnr
-
+#claculate ZCR
 def calculate_zcr(audio_data):
     zero_crossings = np.where(np.diff(np.signbit(audio_data)))[0]
     zcr = len(zero_crossings) / len(audio_data)
@@ -158,7 +158,7 @@ def analyze_audio(audio_data, sample_rate):
     zcr = calculate_zcr(audio_data)
 
     return mean_pitch, std_pitch, hnr, zcr
-
+#simple gender detection
 def detect_gender(mean_pitch):
     if mean_pitch > 180:
         return "female"

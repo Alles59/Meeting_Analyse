@@ -6,6 +6,7 @@ import os
 import json
 import sys
 
+# Calculate the mean and standard deviation of the pitch from the given sound object
 def calculate_pitch(sound):
     pitch = sound.to_pitch_ac(time_step=0.01, pitch_floor=75, pitch_ceiling=500)
     pitch_values = pitch.selected_array['frequency']
@@ -23,17 +24,20 @@ def calculate_pitch(sound):
 
     return mean_pitch, std_pitch
 
+# Calculate the Harmonics-to-Noise Ratio (HNR) from the given sound object
 def calculate_hnr(sound):
     harmonicity = sound.to_harmonicity_cc(time_step=0.01, minimum_pitch=75)
     hnr_values = harmonicity.values[harmonicity.values != -200]
     hnr = np.mean(hnr_values) if len(hnr_values) > 0 else 0
     return hnr
 
+# Calculate the Zero Crossing Rate (ZCR) from the given audio data
 def calculate_zcr(audio_data):
     zero_crossings = np.where(np.diff(np.signbit(audio_data)))[0]
     zcr = len(zero_crossings) / len(audio_data)
     return zcr
 
+# Analyze the audio data to extract mean pitch, standard deviation of pitch, HNR, and ZCR
 def analyze_audio(audio_data, sample_rate):
     sound = parselmouth.Sound(audio_data, sampling_frequency=sample_rate)
 
@@ -43,12 +47,14 @@ def analyze_audio(audio_data, sample_rate):
 
     return mean_pitch, std_pitch, hnr, zcr
 
+# Detect the gender based on the mean pitch value
 def detect_gender(mean_pitch):
     if mean_pitch > 175:
         return "female"
     else:
         return "male"
 
+# Process the video to extract the audio and convert it to a temporary WAV file
 def process_video(video_path):
     video = mp.VideoFileClip(video_path)
     audio = video.audio
@@ -61,6 +67,7 @@ def process_video(video_path):
     os.remove(temp_wav_path)
     return sound, video.duration
 
+# Main function to process the video, analyze audio at regular intervals, and save the results to a JSON file
 def main(video_path, output_path):
     sound, duration = process_video(video_path)
     interval = 5
@@ -86,11 +93,11 @@ def main(video_path, output_path):
     with open(output_path, 'w') as outfile:
         json.dump(analysis_results, outfile, indent=4)
 
-    print(f"Audioanalyse abgeschlossen. JSON gespeichert unter {output_path}")
+    print(f"Audio analysis complete. JSON saved at {output_path}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Verwendung: python Echtzeit-Videoaudio.py <path_to_video> <path_to_output_json>")
+        print("Usage: python Echtzeit-Videoaudio.py <path_to_video> <path_to_output_json>")
         sys.exit(1)
 
     video_path = sys.argv[1]

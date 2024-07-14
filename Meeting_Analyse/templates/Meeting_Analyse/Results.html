@@ -164,7 +164,7 @@
         let fillerData = {};
 
         async function fetchResults() {
-            const randomParam = Math.floor(Math.random() * 1000000); // Zufälligen Parameter hinzufügen
+            const randomParam = Math.floor(Math.random() * 1000000); // Add random parameter
             const audioUrl = `/static/global/audio_analysis.json?random=${randomParam}`;
             const fillerUrl = `/static/global/filler_word_analysis.json?random=${randomParam}`;
             try {
@@ -180,25 +180,25 @@
                 }
                 fillerData = await fillerResponse.json();
 
-                console.log('Audioanalyse-Daten:', analysisData); // Daten zur Überprüfung ausgeben
-                console.log('Filler-Wort-Daten:', fillerData); // Daten zur Überprüfung ausgeben
+                console.log('Audio analysis data:', analysisData); // Output data for verification
+                console.log('Filler word data:', fillerData); // Output data for verification
             } catch (error) {
-                console.error('Fehler beim Abrufen der Analyse:', error);
+                console.error('Error fetching analysis:', error);
             }
         }
 
         function updateResults() {
             var videoPlayer = document.getElementById('videoPlayer');
-            var currentTime = Math.floor(videoPlayer.currentTime); // Sekundenintervall
-            var currentMinute = Math.floor(videoPlayer.currentTime / 60); // Minutenintervall
+            var currentTime = Math.floor(videoPlayer.currentTime); // Seconds interval
+            var currentMinute = Math.floor(videoPlayer.currentTime / 60); // Minutes interval
 
-            console.log('Aktuelle Zeit:', currentTime); // Ausgabe des aktuellen Zeitstempels
+            console.log('Current time:', currentTime); // Output current timestamp
 
-            var interval = Math.floor(currentTime / 5) * 5; // Auf das nächste 5-Sekunden-Intervall runden
-            console.log('Intervall:', interval); // Ausgabe des Intervalls
+            var interval = Math.floor(currentTime / 5) * 5; // Round to the next 5-second interval
+            console.log('Interval:', interval); // Output interval
 
             if (analysisData[interval]) {
-                console.log('Daten für aktuelles Intervall:', analysisData[interval]); // Ausgabe der Daten für das aktuelle Intervall
+                console.log('Data for current interval:', analysisData[interval]); // Output data for the current interval
 
                 const gender = analysisData[interval].gender;
                 const meanPitchScore = updateThermometer('mean_pitch_value', analysisData[interval].mean_pitch, gender);
@@ -210,7 +210,7 @@
                 const teamEfficiencyScore = meanPitchScore + stdPitchScore + hnrScore + zcrScore + fillersScore;
                 updateTeameffizienz('teameffizienz_value', teamEfficiencyScore);
             } else {
-                console.log('Keine Daten für aktuelles Intervall vorhanden.'); // Fehlermeldung wenn keine Daten vorhanden
+                console.log('No data for current interval.'); // Error message if no data is available
                 resetThermometer('mean_pitch_value');
                 resetThermometer('std_pitch_value');
                 resetThermometer('hnr_value');
@@ -220,6 +220,7 @@
             }
         }
 
+        // Display and score settings
         function updateThermometer(id, value, gender) {
             const element = document.getElementById(id);
             let score = 0;
@@ -319,6 +320,7 @@
             return score;
         }
 
+        // Display and score settings
         function updateFillers(id, value) {
             const element = document.getElementById(id);
             let score = 0;
@@ -353,6 +355,7 @@
             }
         }
 
+        // Reset displays
         function resetThermometer(id) {
             const element = document.getElementById(id);
             element.style.height = '0%';
@@ -384,7 +387,7 @@
                 fetchResults().then(() => updateResults());
 
                 // Start fetching results periodically
-                setInterval(fetchResults, 5000); // Alle 5 Sekunden Ergebnisse abrufen
+                setInterval(fetchResults, 5000); // Fetch results every 5 seconds
             }
         });
 
@@ -392,7 +395,7 @@
             updateResults();
         });
 
-        // Initialer Aufruf, um sicherzustellen, dass die Daten beim Laden der Seite abgerufen werden
+        // Initial call to ensure data is fetched when the page loads
         fetchResults();
     </script>
 </body>

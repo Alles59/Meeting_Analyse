@@ -144,8 +144,9 @@
         let analysisData = {};
         let intervalId;
 
+        // Function to fetch analysis results from the server
         async function fetchResults() {
-            const randomParam = Math.floor(Math.random() * 1000000); // Zufälligen Parameter hinzufügen
+            const randomParam = Math.floor(Math.random() * 1000000); // Add a random parameter to avoid caching
             const audioUrl = `/static/global/audio_analysis.json?random=${randomParam}`;
             try {
                 const audioResponse = await fetch(audioUrl, { cache: "no-store" });
@@ -154,24 +155,25 @@
                 }
                 analysisData = await audioResponse.json();
 
-                console.log('Audioanalyse-Daten:', analysisData); // Daten zur Überprüfung ausgeben
-                updateResults(); // Ergebnisse nach dem Abrufen der Daten aktualisieren
+                console.log('Audio analysis data:', analysisData); // Log data for verification
+                updateResults(); // Update results after fetching data
             } catch (error) {
-                console.error('Fehler beim Abrufen der Analyse:', error);
+                console.error('Error fetching analysis:', error);
             }
         }
 
+        // Function to update the displayed results based on the current video time
         function updateResults() {
             var videoPlayer = document.getElementById('videoPlayer');
-            var currentTime = Math.floor(videoPlayer.currentTime); // Sekundenintervall
+            var currentTime = Math.floor(videoPlayer.currentTime); // Get the current time in seconds
 
-            console.log('Aktuelle Zeit:', currentTime); // Ausgabe des aktuellen Zeitstempels
+            console.log('Current time:', currentTime); // Log the current timestamp
 
-            var interval = Math.floor(currentTime / 5) * 5; // Auf das nächste 5-Sekunden-Intervall runden
-            console.log('Intervall:', interval); // Ausgabe des Intervalls
+            var interval = Math.floor(currentTime / 5) * 5; // Round to the nearest 5-second interval
+            console.log('Interval:', interval); // Log the interval
 
             if (analysisData && analysisData.mean_pitch !== undefined) {
-                console.log('Daten für aktuelles Intervall:', analysisData); // Ausgabe der Daten für das aktuelle Intervall
+                console.log('Data for current interval:', analysisData); // Log data for the current interval
 
                 const gender = analysisData.gender;
                 const meanPitchScore = updateThermometer('mean_pitch_value', analysisData.mean_pitch, gender);
@@ -182,7 +184,7 @@
                 const teamEfficiencyScore = meanPitchScore + stdPitchScore + hnrScore + zcrScore;
                 updateTeameffizienz('teameffizienz_value', teamEfficiencyScore);
             } else {
-                console.log('Keine Daten für aktuelles Intervall vorhanden.'); // Fehlermeldung wenn keine Daten vorhanden
+                console.log('Keine Daten für aktuelles Intervall vorhanden.'); // Log if no data is available for the current interval
                 resetThermometer('mean_pitch_value');
                 resetThermometer('std_pitch_value');
                 resetThermometer('hnr_value');
@@ -191,6 +193,7 @@
             }
         }
 
+        // Function to update the thermometer display and return a score based on the value and gender
         function updateThermometer(id, value, gender) {
             const element = document.getElementById(id);
             if (!element) return;
@@ -291,6 +294,7 @@
             return score;
         }
 
+        // Function to update the filler display and return a score based on the value
         function updateFillers(id, value) {
             const element = document.getElementById(id);
             if (!element) return;
@@ -311,6 +315,7 @@
             return score;
         }
 
+        // Function to update the team efficiency display
         function updateTeameffizienz(id, value) {
             const element = document.getElementById(id);
             if (!element) return;
@@ -327,6 +332,7 @@
             }
         }
 
+        // Function to reset the thermometer display
         function resetThermometer(id) {
             const element = document.getElementById(id);
             if (element) {
@@ -335,6 +341,7 @@
             }
         }
 
+        // Function to reset the filler display
         function resetFillers(id) {
             const element = document.getElementById(id);
             if (element) {
@@ -342,6 +349,7 @@
             }
         }
 
+        // Function to reset the team efficiency display
         function resetTeameffizienz(id) {
             const element = document.getElementById(id);
             if (element) {
@@ -351,6 +359,7 @@
             }
         }
 
+        // Event listener for video input change
         document.getElementById('videoInput').addEventListener('change', function(event) {
             var file = event.target.files[0];
             if (file) {
@@ -367,27 +376,29 @@
                 intervalId = setInterval(() => {
                     fetchResults();
                     updateResults();
-                }, 1000); // Alle 1 Sekunde Ergebnisse abrufen und aktualisieren
+                }, 1000); // Fetch and update results every 1 second
             }
         });
 
+        // Event listener for stop button click
         document.getElementById('stopButton').addEventListener('click', function() {
             if (!recordingStopped) {
                 recordingStopped = true;
                 clearInterval(intervalId);
-                console.log('Analyse gestoppt');
-                stopRecording(); // Aufnahme stoppen
+                console.log('Analysis stopped');
+                stopRecording(); // Stop the recording
             }
         });
 
+        // Event listener for page unload
         window.addEventListener('beforeunload', function(event) {
             if (!recordingStopped) {
                 recordingStopped = true;
-                stopRecording(); // Aufnahme stoppen
+                stopRecording(); // Stop the recording
             }
         });
 
-        // Funktion, um die Aufnahme zu stoppen
+        // Function to stop the recording
         function stopRecording() {
             fetch('/stop_recording', {
                 method: 'POST',
@@ -401,15 +412,15 @@
                 }
                 console.log('Recording stopped');
             }).catch(error => {
-                console.error('Fehler beim Stoppen der Aufnahme:', error);
+                console.error('Error stopping recording:', error);
             });
         }
 
-        // Initialer Aufruf, um sicherzustellen, dass die Daten beim Laden der Seite abgerufen werden
+        // Initial call to fetch and update results when the page loads
         intervalId = setInterval(() => {
             fetchResults();
             updateResults();
-        }, 5000); // Alle 5 Sekunden Ergebnisse abrufen und aktualisieren
+        }, 5000); // Fetch and update results every 5 seconds
     </script>
 </body>
 {% endblock %}
