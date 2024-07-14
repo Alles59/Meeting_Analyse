@@ -37,7 +37,7 @@ Usage:
 
   bash
 
-    pyhton flask_server.py
+    python flask_server.py
 
 Apps Overview
 
