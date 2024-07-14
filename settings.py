@@ -8,17 +8,24 @@ SESSION_CONFIGS = [
         app_sequence=['Meeting_Analyse'],
     ),
     dict(
-        name='Live_Audio',
+        name="Live_Audio",
         display_name="Live Audio",
         num_demo_participants=1,
         app_sequence=['Live_Audio'],
+    ),
+        dict(
+        name="Mimik_Analyse",
+        display_name="Mimikanalyse",
+        num_demo_participants=1,
+        app_sequence=['Mimik_Analyse'],
     )
 ]
 
 INSTALLED_APPS = [
-    'otree', 
-    'Meeting_Analyse',
-    "Live_Audio"
+    "otree", 
+    "Meeting_Analyse",
+    "Live_Audio",
+    "Mimik_Analyse"
 ]
 
 SESSION_CONFIG_DEFAULTS = dict(

@@ -1,0 +1,230 @@
+{% extends "global/Page.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emotion Analysis</title>
+    <style>
+        /* Grundlegendes Styling für die Seite */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        #video_player {
+            flex: 2;
+            padding-right: 20px;
+        }
+        #video {
+            width: 100%;
+            height: 400px;
+        }
+        #analysis_results {
+            flex: 1;
+            max-height: 600px; /* Begrenzung der maximalen Höhe für Scrollen */
+            overflow-y: auto;
+            padding-right: 20px;
+        }
+        #results {
+            margin-bottom: 20px;
+        }
+        .bar_chart {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px; /* Abstand unter den Balkendiagrammen */
+        }
+        #cumulative_bar_chart {
+            margin-bottom: 40px; /* Abstand für das kumulative Balkendiagramm */
+        }
+        input[type="file"] {
+            margin-top: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: none;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+    <!-- jQuery-Bibliothek für AJAX- und DOM-Manipulation -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Event Listener, der auf DOMContentLoaded wartet
+        document.addEventListener('DOMContentLoaded', function() {
+            // Event Listener für Tastendrücke
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'r') { 
+                    selectROIs();  // ROIs auswählen
+                } else if (event.key === 's') { 
+                    startAnalysis();  // Analyse starten
+                } else if (event.key === 'q') { 
+                    stopAnalysis();  // Analyse stoppen
+                } else if (event.key === 'p') { 
+                    loadSavedROIs();  // Gespeicherte ROIs laden
+                }
+            });
+        });
+
+        // Funktion zur Auswahl der ROIs
+        function selectROIs() {
+            fetch('http://localhost:5000/select_rois', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Funktion zum Laden gespeicherter ROIs
+        function loadSavedROIs() {
+            fetch('http://localhost:5000/load_rois', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.status);
+                document.getElementById('roiNamesData').textContent = JSON.stringify(data.roi_names);
+            
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Funktion zum Starten der Analyse
+        function startAnalysis() {
+            fetch('http://localhost:5000/start_analysis', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.status);
+                loadResults();  // Starte das Laden der Ergebnisse
+                setInterval(loadResults, 1000);  // Lädt die Ergebnisse jede Sekunde neu
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Funktion zum Stoppen der Analyse
+        function stopAnalysis() {
+            fetch('http://localhost:5000/stop_analysis', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.status);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Funktion zum Laden der Ergebnisse
+        function loadResults() {
+            console.log("Loading live results");
+            $.get("http://localhost:5000/live_results", function(data) {
+                let results;
+                try {
+                    results = data;
+                } catch (e) {
+                    console.error('Error parsing JSON:', e);
+                    results = [];
+                }
+
+                let results_html = "<table>";
+                results_html += "<tr><th>Timestamp</th><th>ROI</th><th>Dominant Emotion</th></tr>";
+                for (let i = 0; i < results.length; i++) {
+                    let roi_name = results[i].Roi;
+                    let timestamp = results[i].Timestamp;
+                    let emotion = results[i].Dominant_Emotion;
+                    results_html += `<tr><td>${timestamp}</td><td>${roi_name}</td><td>${emotion}</td></tr>`;
+                }
+                results_html += "</table>";
+
+                $("#results").html(results_html);
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                console.error('Error loading live results:', textStatus, errorThrown);
+                $("#results").html("<p class='error'>Error loading results. Please try again later.</p>");
+            });
+
+            // Aktualisiert das kumulative Balkendiagramm
+            $("#cumulative_bar_chart").attr("src", "http://localhost:5000/bar_chart.png?" + new Date().getTime());
+
+            var roiNamesElement = document.getElementById('roiNamesData');
+            if (roiNamesElement) {
+                var roiNames = JSON.parse(roiNamesElement.textContent);
+                $("#individual_bar_charts").empty();
+                roiNames.forEach(function(roi_name) {
+                    // Fügt Balkendiagramme für einzelne ROIs hinzu
+                    $("#individual_bar_charts").append('<img class="bar_chart" src="http://localhost:5000/bar_chart.png?roi_name=' + roi_name + '" alt="Bar Chart for ' + roi_name + '">');
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Emotion Analysis</h1>
+    <p>Press 'r' to select ROIs, 's' to start analysis, 'q' to stop analysis, and 'p' to load previous ROIs.</p>
+    <div id="container">
+        <div id="video_player">
+            <video id="video" controls>
+                <source src="" type="video/mp4">
+            </video>
+            <input type="file" id="video_upload" accept="video/*">
+        </div>
+        <div id="analysis_results">
+            <div id="results"></div>
+            <img id="cumulative_bar_chart" class="bar_chart" src="http://localhost:5000/bar_chart.png" alt="Cumulative Bar Chart">
+            <div id="individual_bar_charts"></div>
+        </div>
+    </div>
+    <script>
+        // Event Listener für das Hochladen von Videos
+        document.getElementById('video_upload').addEventListener('change', function(event) {
+            var file = event.target.files[0];
+            var url = URL.createObjectURL(file);
+            var video = document.getElementById('video');
+            video.src = url;
+        });
+    </script>
+</body>
+</html>
+{% endblock %}
